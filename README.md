@@ -135,6 +135,35 @@ The portfolio is deployed using Vercel.
 
 https://TU-DOMINIO.vercel.app
 
+### Getting Started
+
+#### Clone the repository
+
+```bash
+  git clone https://github.com/yclicourt/portfolio-yoadevOps
+```
+#### Install dependencies
+
+```bash
+  pnpm install
+```
+#### Run Locally
+
+```bash
+  pnpm run dev
+```
+#### Build for production
+
+```bash
+  pnpm run build
+```
+
+#### Preview production build
+
+```bash
+  pnpm run preview
+```
+
 ---
 
 ## 🎯 Engineering Focus
@@ -158,3 +187,4 @@ GitOps
 Observability
         ↓
 Platform Engineering
+```
