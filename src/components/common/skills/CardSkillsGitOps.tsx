@@ -3,7 +3,7 @@ import { SiArgo } from "react-icons/si";
 const skills = [
   {
     title: "ArgoCD",
-    icon: <SiArgo className="w-10 h-10 text-cyan-400" />,
+    icon: <SiArgo className="w-10 h-10 text-cyan-400 object-contain" />,
   },
 ];
 
@@ -33,7 +33,7 @@ export const CardSkillsGitOps = () => {
         <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-2xl bg-white/5 border border-white/10 shadow-inner">
           {skill.icon}
         </div>
-        <h4 className="mb-1 text-sm text-center font-medium tracking-wide text-slate-300 uppercase">
+        <h4 className="mt-2 text-xs sm:text-sm text-center font-medium tracking-tight text-slate-300 uppercase px-1">
           {skill.title}
         </h4>
       </div>

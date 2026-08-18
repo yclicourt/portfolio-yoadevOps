@@ -10,7 +10,7 @@ import { CardSkillsVirtualization } from "./common/skills/CardSkillsVirtualizati
 export const Skills = () => {
 
   const flexStyle = "grid grid-cols-4 gap-4 items-center p-6";
-  const h2Style = "mt-3 text-white text-2xl mt-10";
+  const h2Style = "mt-3 text-center sm:text-left p-6 text-white text-2xl mt-10";
 
   return (
     <div className="max-w-7xl mx-auto m-20 py-4">
