@@ -12,7 +12,7 @@ export const footer = {
 "Tailwind CSS"
 ],
 
-  github: "github.com/yclicourt",
+  github: "https://github.com/yclicourt",
 
-  linkedin: "linkedin.com/in/yoancarlos",
+  linkedin: "https://www.linkedin.com/in/yoancarlos/",
 };
