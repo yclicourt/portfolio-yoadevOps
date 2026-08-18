@@ -1,75 +1,160 @@
-# React + TypeScript + Vite
+# ⚙️ Y.C. DevOps — Infrastructure & Platform Engineering
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <strong>Infrastructure • DevOps • Platform Engineering</strong>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  Building reliable infrastructure, automated delivery pipelines,
+  and Kubernetes-based platforms.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<p align="center">
+  <a href="https://TU-DOMINIO.vercel.app">🌐 Portfolio</a>
+  •
+  <a href="https://github.com/yclicourt">📂 GitHub</a>
+  •
+  <a href="https://www.linkedin.com/in/yoancarlos/">💼 LinkedIn</a>
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 👨‍💻 About
 
-## Expanding the ESLint configuration
+I'm an Infrastructure / DevOps Engineer focused on building and
+automating modern infrastructure and delivery platforms.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+My main areas of interest are:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ⚙️ Infrastructure as Code
+- ⛵ Kubernetes and container platforms
+- 🔄 CI/CD automation
+- 🚀 GitOps
+- 🏗️ Platform Engineering
+- ⚡ Infrastructure automation
+- 📊 Observability
+- ☁️ Cloud-native technologies
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This portfolio showcases selected projects and practical implementations
+focused on infrastructure, automation, deployment and platform engineering.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🧱 Infrastructure & Automation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Terraform
+- Ansible
+- Docker
+- Kubernetes
+- K3s
+- Helm
+- Kustomize
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔄 CI/CD & GitOps
 
-```
+- GitHub Actions
+- GitLab CI/CD
+- ArgoCD
+- GitOps
+
+### 🐳 Containers & Registries
+
+- Docker
+- Harbor
+- Trivy
+
+### 📈 Observability
+
+- Prometheus
+- Grafana
+- Loki
+- OpenTelemetry
+
+### 🖥️ Infrastructure & Virtualization
+
+- VMware
+- ESXi
+- vCenter
+- Proxmox
+- TrueNAS
+- pfSense
+
+---
+
+## 🌟 Featured Projects
+
+### ⚡ TaskApp GitOps Kubernetes Platform
+
+A production-oriented DevOps platform designed to demonstrate
+modern application delivery practices on Kubernetes.
+
+The project focuses on the infrastructure and delivery platform
+rather than the application itself.
+
+**Key technologies**
+
+- Kubernetes / K3s
+- Terraform
+- Helm
+- GitHub Actions
+- ArgoCD
+- Harbor
+- Trivy
+- Docker
+
+**Architecture**
+
+![Architecture](./public/images/projects/architecture_proy_gitOps_platform.png)
+
+**Repository**
+
+[View project →](https://github.com/yclicourt/deploy-gitOps-app)
+
+---
+
+## 🌐 Portfolio
+
+The portfolio website presents my background, technical skills,
+projects and experience across infrastructure, DevOps and
+platform engineering.
+
+### Built with
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+
+### Deployment
+
+The portfolio is deployed using Vercel.
+
+**Live website:**
+
+https://TU-DOMINIO.vercel.app
+
+---
+
+## 🎯 Engineering Focus
+
+I'm particularly interested in building platforms that make
+software delivery more reliable, repeatable and observable.
+
+My current focus includes:
+
+```text
+Infrastructure as Code
+        ↓
+Containerization
+        ↓
+Kubernetes
+        ↓
+CI/CD
+        ↓
+GitOps
+        ↓
+Observability
+        ↓
+Platform Engineering
