@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from "react";
+import type { ReactNode } from "react";
 import { AboutMe } from "./components/AboutMe";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -9,7 +9,7 @@ import { Skills } from "./components/Skills";
 import { Background } from "./components/common/Background";
 import { ButtonUp } from "./components/common/ButtonUp";
 
-function App({ children }: { children?: FC<PropsWithChildren> }) {
+function App({ children }: { children?: ReactNode }) {
   return (
     <>
       <div>
