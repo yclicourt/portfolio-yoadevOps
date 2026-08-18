@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <title>Platform Engineer in Server Infrastructure</title>
+  <desc>Editable vector illustration of a platform engineer in front of server racks and cloud infrastructure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b2a35"/>
+      <stop offset=".55" stop-color="#101827"/>
+      <stop offset="1" stop-color="#07111f"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="180" y1="110" x2="640" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="520" rx="24" fill="url(#bg)"/>
+  <path d="M0 90h800M0 420h800" stroke="#1e3a4a" opacity=".45"/>
+  <g opacity=".25" stroke="#22d3ee">
+    <path d="M30 60h170v80h90"/>
+    <path d="M770 120H620v75h-70"/>
+    <path d="M30 390h150v-55h80"/>
+  </g>
+
+  <!-- Server racks -->
+  <g>
+    <rect x="38" y="76" width="190" height="335" rx="12" fill="#0b1522" stroke="#28526a" stroke-width="3"/>
+    <rect x="54" y="96" width="158" height="66" rx="8" fill="#111f2d" stroke="#1f5167"/>
+    <rect x="54" y="178" width="158" height="66" rx="8" fill="#111f2d" stroke="#1f5167"/>
+    <rect x="54" y="260" width="158" height="66" rx="8" fill="#111f2d" stroke="#1f5167"/>
+    <rect x="54" y="342" width="158" height="52" rx="8" fill="#111f2d" stroke="#1f5167"/>
+    <g fill="#22d3ee" filter="url(#glow)">
+      <circle cx="72" cy="117" r="4"/><circle cx="72" cy="199" r="4"/><circle cx="72" cy="281" r="4"/>
+    </g>
+    <g stroke="#35677b" stroke-width="4" stroke-linecap="round">
+      <path d="M88 117h90M88 137h70"/>
+      <path d="M88 199h90M88 219h70"/>
+      <path d="M88 281h90M88 301h70"/>
+      <path d="M88 363h90"/>
+    </g>
+  </g>
+
+  <!-- Cloud/platform panel -->
+  <g transform="translate(548 55)">
+    <rect width="210" height="140" rx="18" fill="#0b1625" stroke="#24516c" stroke-width="2"/>
+    <path d="M55 99h100c15 0 25-9 25-22s-10-22-24-22c-4-19-18-29-38-29-20 0-35 12-40 29-14 0-24 9-24 22s11 22 26 22Z"
+          stroke="url(#cyan)" stroke-width="4"/>
+    <circle cx="45" cy="28" r="4" fill="#22d3ee"/>
+    <circle cx="62" cy="28" r="4" fill="#2563eb"/>
+    <circle cx="79" cy="28" r="4" fill="#64748b"/>
+  </g>
+
+  <!-- Person silhouette / engineer -->
+  <g transform="translate(265 68)">
+    <!-- glow behind subject -->
+    <ellipse cx="145" cy="360" rx="150" ry="36" fill="#0ea5e9" opacity=".12"/>
+    <!-- head -->
+    <circle cx="145" cy="82" r="49" fill="#c98f72"/>
+    <!-- hair -->
+    <path d="M98 78c3-42 34-61 65-53 24 6 38 25 34 51-13-11-25-17-43-17-19 0-36 8-56 19Z" fill="#17202b"/>
+    <!-- neck -->
+    <path d="M126 117h38v45h-38z" fill="#bd8066"/>
+    <!-- shirt / jacket -->
+    <path d="M82 154c22-16 41-21 63-21s41 5 63 21l55 207H27z" fill="#14202d" stroke="#2f5265" stroke-width="3"/>
+    <path d="m145 137 36 45-36 65-36-65z" fill="#e8eef2"/>
+    <path d="m145 137-17 45 17 22 17-22z" fill="#1f3445"/>
+    <!-- lapels -->
+    <path d="m108 154 37 50-24 37-39-87zM182 154l-37 50 24 37 39-87z" fill="#1b2b3b"/>
+    <!-- arms -->
+    <path d="M83 169 45 267l37 15 45-93z" fill="#162331"/>
+    <path d="M207 169l38 98-37 15-45-93z" fill="#162331"/>
+    <!-- hands -->
+    <path d="M45 267c-8 10-3 24 9 27l24-10-7-19z" fill="#c98f72"/>
+    <path d="M245 267c8 10 3 24-9 27l-24-10 7-19z" fill="#c98f72"/>
+    <!-- subtle tie -->
+    <path d="m137 201 8 10 8-10-8 74z" fill="#22d3ee" opacity=".85"/>
+    <!-- facial details -->
+    <circle cx="128" cy="83" r="3" fill="#1d2730"/>
+    <circle cx="162" cy="83" r="3" fill="#1d2730"/>
+    <path d="M134 105c8 5 15 5 22 0" stroke="#7c4a3d" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- terminal -->
+  <g transform="translate(470 330)">
+    <rect width="270" height="125" rx="12" fill="#08121e" stroke="#24516c" stroke-width="2"/>
+    <circle cx="18" cy="18" r="5" fill="#ef4444"/>
+    <circle cx="35" cy="18" r="5" fill="#f59e0b"/>
+    <circle cx="52" cy="18" r="5" fill="#22c55e"/>
+    <g font-family="monospace" font-size="15" fill="#9eeaf5">
+      <text x="20" y="52">&gt; terraform apply</text>
+      <text x="20" y="76">&gt; kubectl apply -f</text>
+      <text x="20" y="100">&gt; argocd app sync</text>
+    </g>
+  </g>
+
+  <!-- decorative nodes -->
+  <g stroke="#22d3ee" stroke-width="2" opacity=".7">
+    <path d="M248 110h52M520 260h70M240 440h120"/>
+  </g>
+  <g fill="#22d3ee">
+    <circle cx="250" cy="110" r="4"/><circle cx="590" cy="260" r="4"/><circle cx="360" cy="440" r="4"/>
+  </g>
+</svg>
