@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://TU-DOMINIO.vercel.app">🌐 Portfolio</a>
+  <a href="https://yoadevops.vercel.app/">🌐 Portfolio</a>
   •
   <a href="https://github.com/yclicourt">📂 GitHub</a>
   •
@@ -106,7 +106,7 @@ rather than the application itself.
 
 **Architecture**
 
-![Architecture](./public/images/projects/architecture_proy_gitOps_platform.png)
+![Architecture](/public/images/projects/architecture_proy_gitOps_platform.png)
 
 **Repository**
 
@@ -119,6 +119,9 @@ rather than the application itself.
 The portfolio website presents my background, technical skills,
 projects and experience across infrastructure, DevOps and
 platform engineering.
+
+### 📸 Preview
+![Preview](/public/preview_portfolio.png)
 
 ### Built with
 
@@ -133,7 +136,7 @@ The portfolio is deployed using Vercel.
 
 **Live website:**
 
-https://TU-DOMINIO.vercel.app
+https://yoadevops.vercel.app/
 
 ### Getting Started
 
