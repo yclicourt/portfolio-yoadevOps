@@ -3,8 +3,6 @@ export const contact = {
 
   email: "yclicourt@gmail.com",
 
-  resume: "/Julio_Gonzalez_CV.pdf",
-
   linkedin: "linkedin.com/in/yoancarlos",
   
   github: "github.com/yclicourt",
