@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { Presentation } from "./components/Presentation";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
+import { Services } from "./components/Services";
 import { Background } from "./components/common/Background";
 import { ButtonUp } from "./components/common/ButtonUp";
 
@@ -26,6 +27,9 @@ function App({ children }: { children?: ReactNode }) {
             </section>
             <section id="skills">
               <Skills />
+            </section>
+            <section id="services">
+              <Services />
             </section>
             <section id="projects">
               <Projects />

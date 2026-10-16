@@ -3,7 +3,7 @@ export const footer = {
 
   role: "Platform Engineer • DevOps Engineer • Infrastructure Engineer",
 
-  copyright: `© ${new Date().getFullYear()} Yoan Carlos Licourt Acosta. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} YoaDevOps Consulting · Yoan Carlos Licourt Acosta. All rights reserved.`,
 
   builtWith: [
 "React",

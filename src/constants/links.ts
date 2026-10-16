@@ -15,6 +15,11 @@ export const links = [
     className: "hover:text-cyan-700 transition hover:border-b-2",
   },
   {
+    name: "Services",
+    href: "#services",
+    className: "hover:text-cyan-700 transition hover:border-b-2",
+  },
+  {
     name: "Projects",
     href: "#projects",
     className: "hover:text-cyan-700 transition hover:border-b-2",
