@@ -6,7 +6,7 @@ export const AboutMe = () => {
       >
         About Me
       </h1>
-      <p className="text-gray-200 text-lg mt-6 p-6 text-justify leading-relaxed max-w-4xl mx-auto">
+      <p className="text-gray-200 text-lg mt-6 p-6 text-justify leading-relaxed">
         DevOps & Infrastructure Engineer with 6+ years of experience designing,
         automating, and managing enterprise infrastructure. Strong background in
         Linux, virtualization, Kubernetes, +containers, Infrastructure as Code,
