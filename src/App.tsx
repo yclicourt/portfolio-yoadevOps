@@ -28,7 +28,7 @@ function App({ children }: { children?: ReactNode }) {
             <section id="skills">
               <Skills />
             </section>
-            <section id="services">
+            <section id="services" className="mt-20">
               <Services />
             </section>
             <section id="projects">

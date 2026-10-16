@@ -9,7 +9,7 @@ export const Presentation = () => {
             YOAN CARLOS LICOURT ACOSTA
           </h1>
           <h2 className="mt-10 text-xl font-bold tracking-tight text-white sm:text-4xl">
-            INFRASTRUCTURE & DEVOPS ENGINEER | PLATFORM ENGINEER
+            INFRASTRUCTURE & DEVOPS ENGINEER | PLATFORM ENGINEER | FULLSTACK ENGINEER
           </h2>
           <span className="mt-10 block text-lg leading-8 text-gray-300">
             Building Scalable, Secure, and Efficient Cloud Infrastructures
