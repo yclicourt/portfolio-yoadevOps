@@ -95,6 +95,8 @@ export const CardProjects = () => {
             <div className="mt-6 flex gap-3">
               <a
                 href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   rounded-lg
                   bg-cyan-500

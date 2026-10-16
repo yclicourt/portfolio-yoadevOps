@@ -15,7 +15,7 @@ export const Skills = () => {
         SKILLS
       </h1>
       <section>
-        <h2 className={h2Style}>Infraestructure & Virtualization</h2>
+        <h2 className={h2Style}>Infrastructure & Virtualization</h2>
         <div className={flexStyleSkills}>
           <CardSkillsVirtualization />
         </div>
@@ -33,7 +33,7 @@ export const Skills = () => {
         </div>
       </section>
       <section>
-        <h2 className={h2Style}>Infraestructure as Code & Automation</h2>
+        <h2 className={h2Style}>Infrastructure as Code & Automation</h2>
         <div className={flexStyleSkills}>
           <CardSkillsInfra />
         </div>

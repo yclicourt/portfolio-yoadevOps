@@ -7,9 +7,9 @@ export const AboutMe = () => {
         About Me
       </h1>
       <p className="text-gray-200 text-xl mt-4 p-6 text-center">
-        DevOps & Infraestructure Engineer with 6+ years of experience designing,
+        DevOps & Infrastructure Engineer with 6+ years of experience designing,
         automating, and managing enterprise infrastructure. Strong background in
-        Linux, virtualization, Kubernetes, +containers, Infraestructure as Code,
+        Linux, virtualization, Kubernetes, +containers, Infrastructure as Code,
         CI/CD, and GitOps.Experienced in building and automating infrastructure
         and application delivery workflows using Terraform, Ansible, Docker,
         Kubernetes, Helm, GitHub Actions, GitLab CI/CD, and ArgoCD. Background

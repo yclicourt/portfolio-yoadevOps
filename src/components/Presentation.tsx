@@ -9,16 +9,18 @@ export const Presentation = () => {
             YOAN CARLOS LICOURT ACOSTA
           </h1>
           <h2 className="mt-10 text-xl font-bold tracking-tight text-white sm:text-4xl">
-            INFRAESTRUCTURE & DEVOPS ENGINEER|PLATFORM ENGINEER
+            INFRASTRUCTURE & DEVOPS ENGINEER | PLATFORM ENGINEER
           </h2>
           <span className="mt-10 block text-lg leading-8 text-gray-300">
-            Building Scalable, Secure, and Efficient Cloud Infraestructures
+            Building Scalable, Secure, and Efficient Cloud Infrastructures
           </span>
 
           {/* Botones adaptables */}
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href="github.com/yclicourt"
+              href="https://github.com/yclicourt"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center text-black border-cyan-300 bg-cyan-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
             >
               VIEW MY WORK

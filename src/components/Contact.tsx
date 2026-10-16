@@ -18,28 +18,43 @@ export const Contact = () => {
           </p>
 
           {/* Email */}
+          {/* Contact rows: email / linkedin / github as real links */}
           <div className="mt-8 space-y-4">
-            <div className="flex items-center gap-4 text-slate-300">
-              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400">
+            {/* Email */}
+            <a
+              href="mailto:yclicourt@gmail.com"
+              className="flex items-center gap-4 text-slate-300 hover:text-cyan-300 transition group"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400 group-hover:bg-cyan-500/10">
                 <FaEnvelope />
               </span>
               <span className="text-sm font-medium">{contact.email}</span>
-            </div>
+            </a>
 
             {/* Linkedin */}
-            <div className="flex items-center gap-4 text-slate-300">
-              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400">
+            <a
+              href="https://linkedin.com/in/yoancarlos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-slate-300 hover:text-cyan-300 transition group"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400 group-hover:bg-cyan-500/10">
                 <FaLinkedin />
               </span>
               <span className="text-sm font-medium">{contact.linkedin}</span>
-            </div>
+            </a>
             {/* Github */}
-            <div className="flex items-center gap-4 text-slate-300">
-              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400">
+            <a
+              href="https://github.com/yclicourt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-slate-300 hover:text-cyan-300 transition group"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-cyan-400 group-hover:bg-cyan-500/10">
                 <FaGithub />
               </span>
               <span className="text-sm font-medium">{contact.github}</span>
-            </div>
+            </a>
 
             {/* WhatsApp (Nuevo) */}
             <a
@@ -65,7 +80,7 @@ export const Contact = () => {
               </label>
               <input
                 type="text"
-                placeholder="Tu nombre"
+                placeholder="Your name"
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition"
               />
             </div>
@@ -76,7 +91,7 @@ export const Contact = () => {
               </label>
               <input
                 type="email"
-                placeholder="tu@correo.com"
+                placeholder="your@email.com"
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition"
               />
             </div>
@@ -87,7 +102,7 @@ export const Contact = () => {
               </label>
               <textarea
                 rows={4}
-                placeholder="Escribe tu mensaje aquí..."
+                placeholder="Write your message here..."
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition resize-none"
               ></textarea>
             </div>
