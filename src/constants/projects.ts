@@ -61,4 +61,21 @@ export const projects = [
       "ArgoCD"
     ],
   },
+  {
+    title: "Ecommerce Full-Stack Platform",
+    icon: "https://raw.githubusercontent.com/yclicourt/ecommerce-frontend-angular/master/public/web_modo_light.png",
+    href: "https://github.com/yclicourt/ecommerce-frontend-angular",
+    description:
+      "Complete ecommerce platform with an Angular 18 frontend styled with TailwindCSS and a NestJS backend powered by PostgreSQL and Prisma. Includes JWT authentication, PayPal payment integration, order confirmation emails, light/dark mode UI, and is deployed to production on Vercel.",
+    tools: [
+      "Angular 18",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "PayPal API",
+      "JWT",
+      "Vercel",
+    ],
+  },
 ];
