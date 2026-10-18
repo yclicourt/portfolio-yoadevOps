@@ -78,4 +78,18 @@ export const projects = [
       "Vercel",
     ],
   },
+  {
+    title: "REIKO'S LLC \u2014 Logistics Landing",
+    icon: "https://reikosllc.vercel.app/img1.webp",
+    href: "https://reikosllc.vercel.app/",
+    description:
+      "Corporate landing page for a logistics company built with Angular 18 and TailwindCSS. Includes Transport, Storage and Logistics service pages, an animated image carousel, a working quote-request contact form powered by Formspree, and optimized WebP imagery (5.2 MB \u2192 364 KB) for fast loading. Deployed to production on Vercel.",
+    tools: [
+      "Angular 18",
+      "TailwindCSS",
+      "Swiper",
+      "Formspree",
+      "Vercel",
+    ],
+  },
 ];
