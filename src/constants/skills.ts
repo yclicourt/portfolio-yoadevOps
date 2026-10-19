@@ -51,10 +51,7 @@ export const skillCategories: SkillCategory[] = [
     id: "observability",
     icon: "chartline",
     title: "Observability & Monitoring",
-    skills: [
-      { title: "Prometheus", icon: "prometheus" },
-      { title: "Grafana", icon: "grafana" },
-    ],
+    skills: [{ title: "OpenObserve", icon: "openobserve" }],
   },
   {
     id: "registry",
@@ -84,3 +81,4 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
+

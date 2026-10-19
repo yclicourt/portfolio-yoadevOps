@@ -2,6 +2,7 @@ import {
   FaChartLine,
   FaCogs,
   FaCodeBranch,
+  FaEye,
   FaFileCode,
   FaServer,
   FaShieldAlt,
@@ -14,14 +15,12 @@ import {
   SiDocker,
   SiGithubactions,
   SiGitlab,
-  SiGrafana,
   SiHarbor,
   SiHelm,
   SiKaniko,
   SiKubernetes,
   SiLinux,
   SiPodman,
-  SiPrometheus,
   SiProxmox,
   SiTerraform,
   SiVmware,
@@ -50,8 +49,7 @@ const skillIcons: Record<string, React.ReactNode> = {
   githubactions: <SiGithubactions className="w-4 h-4" />,
   gitlab: <SiGitlab className="w-4 h-4" />,
   argo: <SiArgo className="w-4 h-4" />,
-  prometheus: <SiPrometheus className="w-4 h-4" />,
-  grafana: <SiGrafana className="w-4 h-4" />,
+  openobserve: <FaEye className="w-4 h-4" />,
   harbor: <SiHarbor className="w-4 h-4" />,
   vmware: <SiVmware className="w-4 h-4" />,
   proxmox: <SiProxmox className="w-4 h-4" />,
@@ -134,3 +132,4 @@ export const Skills = () => {
     </div>
   );
 };
+
