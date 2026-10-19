@@ -1,5 +1,26 @@
 export const projects = [
   {
+    title: "Tasks App \u2014 Platform Engineering",
+    icon: "https://raw.githubusercontent.com/yclicourt/tasks-app-platform-devops/main/docs/architecture.svg",
+    href: "https://github.com/yclicourt/tasks-app-platform-devops",
+    description:
+      "End-to-end platform engineering demo: git push triggers GitHub Actions (lint, test, Trivy scan) \u2192 Harbor \u2192 ArgoCD app-of-apps deploys the platform from git. Traffic via Kubernetes Gateway API with automated TLS, secrets via Sealed Secrets, policies via Kyverno, observability via OpenObserve, backups via Velero. Every layer declared in git and reproducible on any k3s cluster.",
+    tools: [
+      "Kubernetes",
+      "ArgoCD",
+      "Gateway API",
+      "GitHub Actions",
+      "Terraform",
+      "Helm",
+      "Sealed Secrets",
+      "cert-manager",
+      "Kyverno",
+      "OpenObserve",
+      "Velero",
+      "Harbor",
+    ],
+  },
+  {
     title: "TaskApp GitOps Kubernetes Platform",
     icon: "/images/projects/architecture_proy_gitOps_platform.png",
     href: "https://github.com/yclicourt/deploy-gitOps-app",
@@ -38,27 +59,6 @@ export const projects = [
       "React + Vite + TailwindCSS",
       "NGINX Ingress",
       "GitHub Container Registry / Harbor",
-    ],
-  },
-  {
-    title: "TaskApp DevOps Platform",
-    icon: "/images/projects/app-2.png",
-    href: "https://github.com/yclicourt/tasks-app-platform-devops",
-    description:
-      "This project brings the full DevOps lifecycle together for a tasks application: Terraform modules provision the Kubernetes platform, container images are scanned with Trivy, Helm packages each release, ArgoCD delivers it via GitOps, and GitHub Actions automates the CI/CD pipeline end to end.",
-    tools: [
-      "Terraform",
-      "Kubernetes Provider",
-      "Kubernetes",
-      "PostgreSQL",
-      "Django Rest Framework",
-      "React + Vite + TailwindCSS",
-      "NGINX Ingress",
-      "GitHub Container Registry / Harbor",
-      "Github Actions",
-      "Trivy",
-      "Helm",
-      "ArgoCD"
     ],
   },
   {
