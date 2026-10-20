@@ -113,7 +113,7 @@ export const projects: Project[] = [
     icon: "/images/projects/welcomehome.svg",
     href: "https://welcome-home-inmobiliary.vercel.app/",
     description:
-      "Client project: real estate platform for a Cuban inmobiliaria (CasaNova brand). Public property listings, detail pages and an admin panel to manage published properties. React + Vite + TypeScript frontend with Supabase backend (PostgreSQL + Auth + Storage), deployed on Vercel.",
+      "Client project: real estate platform for Welcome Home Inmobiliaria, a Cuban real estate company. Public property listings, detail pages and an admin panel to manage published properties. React + Vite + TypeScript frontend with Supabase backend (PostgreSQL + Auth + Storage), deployed on Vercel.",
     tools: ["React", "Vite", "TypeScript", "Supabase", "Vercel"],
   },
 ];
