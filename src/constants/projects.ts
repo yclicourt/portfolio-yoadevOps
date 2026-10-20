@@ -1,4 +1,13 @@
-export const projects = [
+export interface Project {
+  title: string;
+  category: "devops" | "fullstack";
+  icon: string;
+  href: string;
+  description: string;
+  tools: string[];
+}
+
+export const projects: Project[] = [
   {
     title: "Tasks App \u2014 Platform Engineering",
     category: "devops",
@@ -97,7 +106,7 @@ export const projects = [
       "Formspree",
       "Vercel",
     ],
-  },,
+  },
   {
     title: "WelcomeHome \u2014 Real Estate Platform",
     category: "fullstack",
