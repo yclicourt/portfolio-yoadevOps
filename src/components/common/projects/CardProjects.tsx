@@ -69,6 +69,7 @@ export const CardProjects = ({ category }: CardProjectsProps) => {
                 text-sm
                 leading-6
                 text-slate-400
+                text-justify
               "
             >
               {project.description}
