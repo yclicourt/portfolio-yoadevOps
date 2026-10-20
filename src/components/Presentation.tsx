@@ -1,15 +1,77 @@
+import { useEffect, useState } from "react";
+
+const ROLES = [
+  "INFRASTRUCTURE & DEVOPS ENGINEER",
+  "PLATFORM ENGINEER",
+  "FULLSTACK ENGINEER",
+];
+
+const TYPE_MS = 70;
+const DELETE_MS = 35;
+const HOLD_MS = 1800;
+
+function useTypewriter(): string {
+  const [text, setText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setText(ROLES[0]);
+      return;
+    }
+    const current = ROLES[roleIndex % ROLES.length];
+    let charIndex = 0;
+    let deleting = false;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const tick = () => {
+      if (!deleting) {
+        charIndex += 1;
+        setText(current.slice(0, charIndex));
+        if (charIndex >= current.length) {
+          deleting = true;
+          timer = setTimeout(tick, HOLD_MS);
+          return;
+        }
+        timer = setTimeout(tick, TYPE_MS);
+      } else {
+        charIndex -= 1;
+        setText(current.slice(0, charIndex));
+        if (charIndex <= 0) {
+          setRoleIndex((i) => (i + 1) % ROLES.length);
+          return;
+        }
+        timer = setTimeout(tick, DELETE_MS);
+      }
+    };
+
+    timer = setTimeout(tick, 500);
+    return () => clearTimeout(timer);
+  }, [roleIndex]);
+
+  return text;
+}
+
 export const Presentation = () => {
+  const typed = useTypewriter();
+
   return (
     <>
       <div className="mx-auto max-w-7xl px-5 pb-15 sm:pb-32 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-40">
-        
+
         {/* Columna Izquierda: Textos y Botones */}
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl">
           <h1 className="mt-15 text-2xl font-bold tracking-tight text-white sm:text-6xl">
             YOAN CARLOS LICOURT ACOSTA
           </h1>
-          <h2 className="mt-10 text-xl font-bold tracking-tight text-white sm:text-4xl">
-            INFRASTRUCTURE & DEVOPS ENGINEER | PLATFORM ENGINEER | FULLSTACK ENGINEER
+          <h2
+            aria-label="Infrastructure and DevOps Engineer, Platform Engineer, Fullstack Engineer"
+            className="mt-10 min-h-[4rem] text-xl font-bold tracking-tight text-white sm:min-h-[4.5rem] sm:text-4xl"
+          >
+            <span aria-hidden="true">
+              {typed}
+              <span className="animate-blink text-cyan-400">|</span>
+            </span>
           </h2>
           <span className="mt-10 block text-lg leading-8 text-gray-300">
             Building Scalable, Secure, and Efficient Cloud Infrastructures
