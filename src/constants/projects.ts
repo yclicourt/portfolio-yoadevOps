@@ -1,6 +1,7 @@
 export const projects = [
   {
     title: "Tasks App \u2014 Platform Engineering",
+    category: "devops",
     icon: "https://raw.githubusercontent.com/yclicourt/tasks-app-platform-devops/main/docs/architecture.svg",
     href: "https://github.com/yclicourt/tasks-app-platform-devops",
     description:
@@ -22,6 +23,7 @@ export const projects = [
   },
   {
     title: "TaskApp GitOps Kubernetes Platform",
+    category: "devops",
     icon: "/images/projects/architecture_proy_gitOps_platform.png",
     href: "https://github.com/yclicourt/deploy-gitOps-app",
     description:
@@ -30,6 +32,7 @@ export const projects = [
   },
   {
     title: "Terraform Docker Platform",
+    category: "devops",
     icon: "/images/projects/backend-1.png",
     href: "https://github.com/yclicourt/terraform-modules-task-app-fullstack",
     description:
@@ -46,6 +49,7 @@ export const projects = [
   },
   {
     title: "Terraform Kubernetes Platform",
+    category: "devops",
     icon: "/images/projects/app-2.png",
     href: "https://github.com/yclicourt/terraform-modules-kubernetes-tasks-app-fullstack",
     description:
@@ -63,6 +67,7 @@ export const projects = [
   },
   {
     title: "Ecommerce Full-Stack Platform",
+    category: "fullstack",
     icon: "https://raw.githubusercontent.com/yclicourt/ecommerce-frontend/main/public/web_modo_light.png",
     href: "https://github.com/yclicourt/ecommerce-frontend",
     description:
@@ -80,6 +85,7 @@ export const projects = [
   },
   {
     title: "REIKO'S LLC \u2014 Logistics Landing",
+    category: "fullstack",
     icon: "https://reikosllc.vercel.app/img1.webp",
     href: "https://reikosllc.vercel.app/",
     description:
@@ -91,6 +97,14 @@ export const projects = [
       "Formspree",
       "Vercel",
     ],
+  },,
+  {
+    title: "WelcomeHome \u2014 Real Estate Platform",
+    category: "fullstack",
+    icon: "/images/projects/welcomehome.svg",
+    href: "https://welcome-home-inmobiliary.vercel.app/",
+    description:
+      "Client project: real estate platform for a Cuban inmobiliaria (CasaNova brand). Public property listings, detail pages and an admin panel to manage published properties. React + Vite + TypeScript frontend with Supabase backend (PostgreSQL + Auth + Storage), deployed on Vercel.",
+    tools: ["React", "Vite", "TypeScript", "Supabase", "Vercel"],
   },
 ];
-

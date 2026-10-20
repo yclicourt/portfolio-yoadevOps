@@ -1,9 +1,14 @@
 import { projects } from "@/constants/projects";
 
-export const CardProjects = () => {
+interface CardProjectsProps {
+  category: "devops" | "fullstack";
+}
+
+export const CardProjects = ({ category }: CardProjectsProps) => {
+  const filtered = projects.filter((p) => p.category === category);
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project) => (
+      {filtered.map((project) => (
         <article
           key={project.title}
           className="
