@@ -8,10 +8,10 @@ export const Projects = () => {
         Projects
       </h1>
 
-      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-14 mb-2">
+      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-14 mb-2 px-10">
         DevOps &amp; Platform Engineering
       </h2>
-      <p className="text-slate-400 text-sm mb-6">
+      <p className="text-slate-400 text-sm mb-6 px-10">
         Kubernetes platforms, GitOps delivery and infrastructure as code.
       </p>
       <section>
@@ -20,10 +20,10 @@ export const Projects = () => {
         </div>
       </section>
 
-      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-20 mb-2">
+      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-20 mb-2 px-10">
         Fullstack Development
       </h2>
-      <p className="text-slate-400 text-sm mb-6">
+      <p className="text-slate-400 text-sm mb-6 px-10">
         Production web apps, from database to deployed interface.
       </p>
       <section>
