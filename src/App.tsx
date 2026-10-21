@@ -7,6 +7,7 @@ import { Presentation } from "./components/Presentation";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Services } from "./components/Services";
+import { Testimonials } from "./components/Testimonials";
 import { Background } from "./components/common/Background";
 import { ButtonUp } from "./components/common/ButtonUp";
 
@@ -33,6 +34,9 @@ function App({ children }: { children?: ReactNode }) {
             </section>
             <section id="projects">
               <Projects />
+            </section>
+            <section id="testimonials" className="mt-20">
+              <Testimonials />
             </section>
             <section id="contact">
               <Contact />
