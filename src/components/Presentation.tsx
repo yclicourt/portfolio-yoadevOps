@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 const ROLES = [
-  "INFRASTRUCTURE & DEVOPS ENGINEER",
-  "PLATFORM ENGINEER",
   "FULLSTACK ENGINEER",
+  "FULLSTACK DEVELOPER",
+  "DEVOPS & PLATFORM ENGINEER",
 ];
 
 const TYPE_MS = 70;
@@ -65,7 +65,7 @@ export const Presentation = () => {
             YOAN CARLOS LICOURT ACOSTA
           </h1>
           <h2
-            aria-label="Infrastructure and DevOps Engineer, Platform Engineer, Fullstack Engineer"
+            aria-label="Fullstack Engineer, Fullstack Developer, DevOps and Platform Engineer"
             className="mt-10 min-h-[4rem] text-xl font-bold tracking-tight text-white sm:min-h-[4.5rem] sm:text-4xl"
           >
             <span aria-hidden="true">
@@ -74,7 +74,7 @@ export const Presentation = () => {
             </span>
           </h2>
           <span className="mt-10 block text-lg leading-8 text-gray-300">
-            Building Scalable, Secure, and Efficient Cloud Infrastructures
+            I build the systems small businesses run on — and they keep working when the connection doesn&apos;t.
           </span>
 
           {/* Botones adaptables */}

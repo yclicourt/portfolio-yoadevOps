@@ -9,18 +9,6 @@ export const Projects = () => {
       </h1>
 
       <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-14 mb-2 px-10">
-        DevOps &amp; Platform Engineering
-      </h2>
-      <p className="text-slate-400 text-sm mb-6 px-10 text-justify">
-        Kubernetes platforms, GitOps delivery and infrastructure as code.
-      </p>
-      <section>
-        <div className={flexStyleProjects}>
-          <CardProjects category="devops" />
-        </div>
-      </section>
-
-      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-20 mb-2 px-10">
         Fullstack Development
       </h2>
       <p className="text-slate-400 text-sm mb-6 px-10 text-justify">
@@ -29,6 +17,18 @@ export const Projects = () => {
       <section>
         <div className={flexStyleProjects}>
           <CardProjects category="fullstack" />
+        </div>
+      </section>
+
+      <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-20 mb-2 px-10">
+        DevOps &amp; Platform Engineering
+      </h2>
+      <p className="text-slate-400 text-sm mb-6 px-10 text-justify">
+        Kubernetes platforms, GitOps delivery and infrastructure as code.
+      </p>
+      <section>
+        <div className={flexStyleProjects}>
+          <CardProjects category="devops" />
         </div>
       </section>
     </div>

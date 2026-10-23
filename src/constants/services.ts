@@ -1,20 +1,5 @@
 export const services = [
   {
-    id: "platform-setup",
-    icon: "kubernetes",
-    title: "Platform Setup",
-    tagline: "Kubernetes + GitOps platform, live in 2 weeks.",
-    timeline: "2 weeks",
-    deliverables: [
-      "Production-ready Kubernetes cluster (k3s / Kubernetes)",
-      "GitOps delivery with ArgoCD",
-      "CI/CD pipelines (GitHub Actions / GitLab CI)",
-      "Observability: Prometheus, Grafana, Loki, AlertManager",
-      "Infrastructure as Code with Terraform & Ansible",
-      "Handover docs + team walkthrough",
-    ],
-  },
-  {
     id: "mvp-express",
     icon: "rocket",
     title: "MVP Express",
@@ -26,6 +11,21 @@ export const services = [
       "Data: PostgreSQL + Prisma or Supabase",
       "Auth, payments & email integrations",
       "CI/CD + production deployment",
+      "Handover docs + team walkthrough",
+    ],
+  },
+  {
+    id: "platform-setup",
+    icon: "kubernetes",
+    title: "Platform Setup",
+    tagline: "Kubernetes + GitOps platform, live in 2 weeks.",
+    timeline: "2 weeks",
+    deliverables: [
+      "Production-ready Kubernetes cluster (k3s / Kubernetes)",
+      "GitOps delivery with ArgoCD",
+      "CI/CD pipelines (GitHub Actions / GitLab CI)",
+      "Observability: Prometheus, Grafana, Loki, AlertManager",
+      "Infrastructure as Code with Terraform & Ansible",
       "Handover docs + team walkthrough",
     ],
   },
