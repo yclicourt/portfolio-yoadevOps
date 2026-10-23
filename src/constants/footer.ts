@@ -1,7 +1,7 @@
 export const footer = {
   name: "Yoan Carlos Licourt Acosta",
 
-  role: "Platform Engineer • DevOps Engineer • Infrastructure Engineer",
+  role: "Fullstack Engineer • DevOps Engineer • Platform Engineer",
 
   copyright: `© ${new Date().getFullYear()} YoaDevOps Consulting · Yoan Carlos Licourt Acosta. All rights reserved.`,
 

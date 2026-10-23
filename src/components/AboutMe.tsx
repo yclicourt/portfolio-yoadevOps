@@ -7,18 +7,18 @@ export const AboutMe = () => {
         About Me
       </h1>
       <p className="text-gray-200 text-lg mt-6 p-6 text-justify leading-relaxed">
-        DevOps & Infrastructure Engineer with 6+ years of experience designing,
-        automating, and managing enterprise infrastructure. Strong background in
-        Linux, virtualization, Kubernetes, +containers, Infrastructure as Code,
-        CI/CD, and GitOps.Experienced in building and automating infrastructure
-        and application delivery workflows using Terraform, Ansible, Docker,
-        Kubernetes, Helm, GitHub Actions, GitLab CI/CD, and ArgoCD. Background
-        in enterprise infraestructure including VMware, NSX, vCloud Director,
-        high-availability environments, and disaster recovery. Focused on
-        automation, reliable infraestructure, Kubernetes platforms, continuous
-        delivery, and cloud-native technologies. Also experienced in backend
-        development, providing a strong understanding of application and
-        infraestructure integration.
+        Fullstack Developer with 6+ years of experience building the systems
+        small businesses run on: invoicing, inventory, cash register, and
+        customer management — designed to keep working when the connection
+        doesn&apos;t. Founder and lead developer of CajaYa, a management SaaS
+        for Cuban mipymes live in production, and builder of ecommerce
+        platforms and client websites for real-estate and logistics
+        businesses. I work across React, Next.js, and Angular frontends;
+        NestJS, Express, and Django backends; and PostgreSQL with Prisma and
+        Supabase. My edge: a Senior Infrastructure Engineer background
+        (enterprise environments, 100+ VMs, Kubernetes, GitOps, CI/CD, and
+        observability) — so everything I build, I also deploy, back up, and
+        operate in production.
       </p>
     </article>
   );
