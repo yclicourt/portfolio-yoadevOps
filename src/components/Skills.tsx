@@ -1,33 +1,64 @@
 import {
   FaChartLine,
+  FaCode,
   FaCogs,
   FaCodeBranch,
+  FaCss3,
+  FaDatabase,
   FaEye,
   FaFileCode,
+  FaLayerGroup,
+  FaPlug,
   FaServer,
   FaShieldAlt,
   FaTerminal,
+  FaVial,
   FaWindows,
 } from "react-icons/fa";
 import {
+  SiAngular,
   SiAnsible,
   SiArgo,
+  SiDjango,
   SiDocker,
+  SiExpress,
+  SiGit,
+  SiGithub,
   SiGithubactions,
   SiGitlab,
   SiHarbor,
   SiHelm,
+  SiHtml5,
+  SiJavascript,
+  SiJest,
   SiKaniko,
   SiKubernetes,
   SiLinux,
+  SiMariadb,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
   SiPodman,
+  SiPostgresql,
+  SiPrisma,
   SiProxmox,
+  SiPython,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
   SiTerraform,
+  SiTypescript,
+  SiVite,
+  SiVitest,
   SiVmware,
 } from "react-icons/si";
 import { skillCategories } from "@/constants/skills";
 
 const categoryIcons: Record<string, React.ReactNode> = {
+  code: <FaCode className="w-7 h-7 text-cyan-400" />,
+  layergroup: <FaLayerGroup className="w-7 h-7 text-cyan-400" />,
+  database: <FaDatabase className="w-7 h-7 text-cyan-400" />,
+  vial: <FaVial className="w-7 h-7 text-cyan-400" />,
   kubernetes: <SiKubernetes className="w-7 h-7 text-cyan-400" />,
   filecode: <FaFileCode className="w-7 h-7 text-cyan-400" />,
   cogs: <FaCogs className="w-7 h-7 text-cyan-400" />,
@@ -39,6 +70,30 @@ const categoryIcons: Record<string, React.ReactNode> = {
 };
 
 const skillIcons: Record<string, React.ReactNode> = {
+  react: <SiReact className="w-4 h-4" />,
+  nextjs: <SiNextdotjs className="w-4 h-4" />,
+  angular: <SiAngular className="w-4 h-4" />,
+  typescript: <SiTypescript className="w-4 h-4" />,
+  javascript: <SiJavascript className="w-4 h-4" />,
+  tailwindcss: <SiTailwindcss className="w-4 h-4" />,
+  vite: <SiVite className="w-4 h-4" />,
+  html5: <SiHtml5 className="w-4 h-4" />,
+  css3: <FaCss3 className="w-4 h-4" />,
+  nodejs: <SiNodedotjs className="w-4 h-4" />,
+  nestjs: <SiNestjs className="w-4 h-4" />,
+  express: <SiExpress className="w-4 h-4" />,
+  django: <SiDjango className="w-4 h-4" />,
+  python: <SiPython className="w-4 h-4" />,
+  restapi: <FaPlug className="w-4 h-4" />,
+  postgresql: <SiPostgresql className="w-4 h-4" />,
+  prisma: <SiPrisma className="w-4 h-4" />,
+  supabase: <SiSupabase className="w-4 h-4" />,
+  mariadb: <SiMariadb className="w-4 h-4" />,
+  jest: <SiJest className="w-4 h-4" />,
+  vitest: <SiVitest className="w-4 h-4" />,
+  playwright: <FaVial className="w-4 h-4" />,
+  git: <SiGit className="w-4 h-4" />,
+  github: <SiGithub className="w-4 h-4" />,
   kubernetes: <SiKubernetes className="w-4 h-4" />,
   docker: <SiDocker className="w-4 h-4" />,
   podman: <SiPodman className="w-4 h-4" />,
@@ -64,7 +119,7 @@ export const Skills = () => {
         Skills
       </h1>
       <p className="text-slate-400 text-center text-lg mt-4 max-w-3xl mx-auto">
-        The toolkit I use to build platforms and ship applications.
+        The toolkit I use to build, ship, and operate web applications.
       </p>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4 mt-12">
