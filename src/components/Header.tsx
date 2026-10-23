@@ -10,9 +10,9 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Left Side: Logo */}
         <a href="#" className="flex items-center gap-2">
-          <img className="w-auto h-10" src="./yc-devops-logo.svg" alt="Logo" />
+          <img className="w-auto h-10" src="./yc-devops-logo.svg" alt="YoaDevOps logo" />
           <span className="font-semibold text-white text-xl tracking-tight">
-            Y.C. DevOps
+            Yoa<span className="text-cyan-400">Dev</span>Ops
           </span>
         </a>
 
