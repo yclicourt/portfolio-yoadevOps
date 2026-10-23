@@ -75,6 +75,25 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "CajaYa — Mipyme Management SaaS",
+    category: "fullstack",
+    icon: "/images/projects/cajaya.svg",
+    href: "https://caja-ya-saas.vercel.app/",
+    description:
+      "Live SaaS product I founded and built end to end: management platform for Cuban small businesses (mipymes) covering invoicing, inventory and daily cash-register control in a single installable PWA. Multi-tenant architecture on Supabase (PostgreSQL, Auth, Row Level Security) with transactional Postgres RPCs for consecutive invoice numbering and atomic stock decrement, member invitations by email, offline data reading with a persisted client cache, PDF invoices shared via WhatsApp, and a full test suite (Vitest unit tests + a Playwright E2E of the complete daily flow). Deployed in production on Vercel.",
+    tools: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "TailwindCSS",
+      "TanStack Query",
+      "PWA",
+      "Vercel",
+    ],
+  },
+  {
     title: "Ecommerce Full-Stack Platform",
     category: "fullstack",
     icon: "https://raw.githubusercontent.com/yclicourt/ecommerce-frontend/main/public/web_modo_light.png",
