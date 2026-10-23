@@ -1,3 +1,5 @@
+// Orden de las tarjetas: DevOps abre con la plataforma tasks-app y
+// Fullstack con CajaYa (el producto SaaS en producción).
 export interface Project {
   title: string;
   category: "devops" | "fullstack";
