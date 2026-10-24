@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 
 const ROLES = [
   "FULLSTACK ENGINEER",
-  "FULLSTACK DEVELOPER",
-  "DEVOPS & PLATFORM ENGINEER",
+  "FRONTEND DEVELOPER",
+  "BACKEND DEVELOPER",
+  "DEVOPS ENGINEER",
+  "PLATFORM ENGINEER",
 ];
 
 const TYPE_MS = 70;
@@ -65,7 +67,7 @@ export const Presentation = () => {
             YOAN CARLOS LICOURT ACOSTA
           </h1>
           <h2
-            aria-label="Fullstack Engineer, Fullstack Developer, DevOps and Platform Engineer"
+            aria-label="Fullstack Engineer, Frontend Developer, Backend Developer, DevOps Engineer, Platform Engineer"
             className="mt-10 min-h-[4rem] text-xl font-bold tracking-tight text-white sm:min-h-[4.5rem] sm:text-4xl"
           >
             <span aria-hidden="true">
