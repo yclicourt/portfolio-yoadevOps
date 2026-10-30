@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Ancor } from "./common/Ancor";
+import { LanguageSwitcher } from "./common/LanguageSwitcher";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => setIsOpen(!isOpen);
+  const { t } = useLang();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#030914]/90 backdrop-blur-md border-b border-white/10">
@@ -18,19 +21,22 @@ export const Header = () => {
 
         <ul className="hidden md:flex items-center gap-8 text-lg text-white">
           <Ancor />
+          <LanguageSwitcher />
           <a
             href="#contact"
             className="text-cyan-400 border-cyan-500/40 border ml-10 px-4 py-2 rounded-lg text-lg font-bold hover:bg-cyan-500/10 transition"
           >
-            Contact Me 🚀
+            {t.contactCta}
           </a>
         </ul>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/5 transition"
-          aria-label="Toggle Menu"
-        >
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none p-2 rounded-lg hover:bg-white/5 transition"
+            aria-label={t.toggleMenu}
+          >
           {isOpen ? (
             <svg
               className="w-7 h-7"
@@ -61,6 +67,7 @@ export const Header = () => {
             </svg>
           )}
         </button>
+        </div>
       </div>
 
       {isOpen && (
@@ -70,11 +77,12 @@ export const Header = () => {
             onClick={handleToggle}
           >
             <Ancor />
+            <LanguageSwitcher />
             <a
               href="#contact"
               className="text-cyan-400 border-cyan-500/40 border px-6 py-2 rounded-lg text-lg font-bold hover:bg-cyan-500/10 transition mt-2 w-full text-center"
             >
-              Contact Me 🚀
+              {t.contactCta}
             </a>
           </ul>
         </div>

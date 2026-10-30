@@ -1,6 +1,6 @@
 import { FaCheck, FaLifeRing, FaRocket } from "react-icons/fa";
 import { SiKubernetes } from "react-icons/si";
-import { services } from "@/constants/services";
+import { useLang } from "@/i18n/LanguageContext";
 
 const iconMap: Record<string, React.ReactNode> = {
   kubernetes: <SiKubernetes className="w-8 h-8 text-cyan-400" />,
@@ -9,21 +9,22 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export const Services = () => {
+  const { t } = useLang();
   return (
     <div className="max-w-7xl mx-auto py-4 px-5 lg:px-8">
       <h1 className="text-white font-bold text-4xl text-center uppercase tracking-wider">
-        Services
+        {t.services.title}
       </h1>
       <p className="text-slate-400 text-center text-lg mt-4 max-w-3xl mx-auto">
-        Productized consulting from{" "}
+        {t.services.subtitleBefore}{" "}
         <span className="text-cyan-300 font-semibold">
           YoaDevOps Consulting
         </span>{" "}
-        — fixed scope, fixed timeline, no surprises.
+        {t.services.subtitleAfter}
       </p>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
-        {services.map((service) => (
+        {t.services.items.map((service) => (
           <article
             key={service.id}
             className="
@@ -97,7 +98,7 @@ export const Services = () => {
                 hover:text-slate-950
               "
             >
-              Start a project
+              {t.services.cta}
             </a>
           </article>
         ))}
@@ -105,8 +106,7 @@ export const Services = () => {
 
       {/* Work terms */}
       <p className="mt-10 text-center text-sm text-slate-500">
-        Remote-first · LATAM / EU time zones · Contract-based · Paid in USD
-        stablecoins
+        {t.services.terms}
       </p>
     </div>
   );

@@ -1,18 +1,20 @@
 import { FaQuoteLeft } from "react-icons/fa";
 import { testimonials } from "@/constants/testimonials";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Testimonials = () => {
+  const { t: dict } = useLang();
   return (
     <div className="max-w-7xl mx-auto py-4 px-5 lg:px-8">
       <h1 className="text-white font-bold text-4xl text-center uppercase tracking-wider">
-        Testimonials
+        {dict.testimonials.title}
       </h1>
       <p className="text-slate-400 text-center text-lg mt-4 max-w-3xl mx-auto">
-        What clients say about working with{" "}
+        {dict.testimonials.subtitleBefore}{" "}
         <span className="text-cyan-300 font-semibold">
           YoaDevOps Consulting
         </span>
-        .
+        {dict.testimonials.subtitleAfter}
       </p>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-12 max-w-5xl mx-auto">
@@ -35,12 +37,16 @@ export const Testimonials = () => {
             "
           >
             <FaQuoteLeft className="w-7 h-7 text-cyan-400" />
+            {/* Las citas se mantienen en el idioma original del cliente;
+                solo el contexto (tipo de proyecto) se traduce. */}
             <blockquote className="mt-5 flex-1 text-slate-200 leading-relaxed text-justify">
               {t.quote}
             </blockquote>
             <figcaption className="mt-6 border-t border-white/10 pt-4">
               <p className="text-white font-bold">{t.business}</p>
-              <p className="text-sm text-slate-400">{t.context}</p>
+              <p className="text-sm text-slate-400">
+                {dict.testimonials.contexts[t.id] ?? t.context}
+              </p>
             </figcaption>
           </figure>
         ))}

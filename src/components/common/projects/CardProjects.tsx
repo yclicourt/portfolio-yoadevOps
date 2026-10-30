@@ -1,10 +1,12 @@
 import { projects } from "@/constants/projects";
+import { useLang } from "@/i18n/LanguageContext";
 
 interface CardProjectsProps {
   category: "devops" | "fullstack";
 }
 
 export const CardProjects = ({ category }: CardProjectsProps) => {
+  const { t } = useLang();
   const filtered = projects.filter((p) => p.category === category);
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -72,7 +74,8 @@ export const CardProjects = ({ category }: CardProjectsProps) => {
                 text-justify
               "
             >
-              {project.description}
+              {t.projects.items[project.title]?.description ??
+                project.description}
             </p>
 
             {/* Technologies */}
@@ -115,7 +118,7 @@ export const CardProjects = ({ category }: CardProjectsProps) => {
                   hover:bg-cyan-400
                 "
               >
-                View Project
+                {t.projects.viewProject}
               </a>
             </div>
           </div>

@@ -1,7 +1,9 @@
 import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { contact } from "@/constants/contact";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Contact = () => {
+  const { t } = useLang();
   return (
     <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8" id="contact">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -11,10 +13,10 @@ export const Contact = () => {
             id="contact"
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase"
           >
-            Contact Me
+            {t.contact.title}
           </h2>
           <p className="mt-4 text-slate-400 text-sm leading-6">
-            {contact.description}
+            {t.contact.description}
           </p>
 
           {/* Email */}
@@ -58,7 +60,7 @@ export const Contact = () => {
 
             {/* WhatsApp (Nuevo) */}
             <a
-              href="https://wa.me/5351877879?text=Hola%20Yoan,%20vi%20tu%20portfolio%20y%20quiero%20contactarte."
+              href={`https://wa.me/5351877879?text=${encodeURIComponent(t.contact.whatsappText)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-slate-300 hover:text-green-400 transition group"
@@ -76,33 +78,33 @@ export const Contact = () => {
           <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Name
+                {t.contact.nameLabel}
               </label>
               <input
                 type="text"
-                placeholder="Your name"
+                placeholder={t.contact.namePlaceholder}
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition"
               />
             </div>
 
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Email
+                {t.contact.emailLabel}
               </label>
               <input
                 type="email"
-                placeholder="your@email.com"
+                placeholder={t.contact.emailPlaceholder}
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition"
               />
             </div>
 
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Message
+                {t.contact.messageLabel}
               </label>
               <textarea
                 rows={4}
-                placeholder="Write your message here..."
+                placeholder={t.contact.messagePlaceholder}
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition resize-none"
               ></textarea>
             </div>
@@ -111,7 +113,7 @@ export const Contact = () => {
               type="submit"
               className="w-full rounded-lg bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 shadow-lg shadow-cyan-400/20"
             >
-              SEND MESSAGE
+              {t.contact.send}
             </button>
           </form>
         </div>

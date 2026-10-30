@@ -53,6 +53,7 @@ import {
   SiVmware,
 } from "react-icons/si";
 import { skillCategories } from "@/constants/skills";
+import { useLang } from "@/i18n/LanguageContext";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   code: <FaCode className="w-7 h-7 text-cyan-400" />,
@@ -113,13 +114,14 @@ const skillIcons: Record<string, React.ReactNode> = {
 };
 
 export const Skills = () => {
+  const { t } = useLang();
   return (
     <div className="max-w-7xl mx-auto py-4 px-5 lg:px-8">
       <h1 className="text-white font-bold text-4xl text-center uppercase tracking-wider">
-        Skills
+        {t.skills.title}
       </h1>
       <p className="text-slate-400 text-center text-lg mt-4 max-w-3xl mx-auto">
-        The toolkit I use to build, ship, and operate web applications.
+        {t.skills.subtitle}
       </p>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4 mt-12">
@@ -153,7 +155,7 @@ export const Skills = () => {
                 {categoryIcons[category.icon]}
               </div>
               <h3 className="text-lg font-bold text-white leading-tight">
-                {category.title}
+                {t.skills.categories[category.id] ?? category.title}
               </h3>
             </div>
 

@@ -1,18 +1,20 @@
 import { flexStyleProjects } from "@/constants/styles";
 import { CardProjects } from "./common/projects/CardProjects";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Projects = () => {
+  const { t } = useLang();
   return (
     <div className="max-w-7xl mx-auto mt-20 py-4">
       <h1 className="text-white font-bold text-4xl text-center uppercase tracking-wider">
-        Projects
+        {t.projects.title}
       </h1>
 
       <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-14 mb-2 px-10">
-        Fullstack Development
+        {t.projects.fullstackTitle}
       </h2>
       <p className="text-slate-400 text-sm mb-6 px-10 text-justify">
-        Production web apps, from database to deployed interface.
+        {t.projects.fullstackSubtitle}
       </p>
       <section>
         <div className={flexStyleProjects}>
@@ -21,10 +23,10 @@ export const Projects = () => {
       </section>
 
       <h2 className="text-white font-bold text-2xl uppercase tracking-wider mt-20 mb-2 px-10">
-        DevOps &amp; Platform Engineering
+        {t.projects.devopsTitle}
       </h2>
       <p className="text-slate-400 text-sm mb-6 px-10 text-justify">
-        Kubernetes platforms, GitOps delivery and infrastructure as code.
+        {t.projects.devopsSubtitle}
       </p>
       <section>
         <div className={flexStyleProjects}>

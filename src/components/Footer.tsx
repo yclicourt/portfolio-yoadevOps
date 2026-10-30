@@ -1,7 +1,9 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { footer } from "@/constants/footer";
+import { useLang } from "@/i18n/LanguageContext";
 
 export const Footer = () => {
+  const { t } = useLang();
   return (
     <footer className="border-t border-white/10 bg-transparent">
       <div
@@ -23,19 +25,22 @@ export const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white">{footer.name}</h3>
 
-          <p className="mt-1 text-sm text-slate-400">{footer.role}</p>
+          <p className="mt-1 text-sm text-slate-400">{t.footer.role}</p>
         </div>
 
         {/* Center */}
         <div>
           <p className="text-sm text-slate-500">
-            Built with{" "}
+            {t.footer.builtWith}{" "}
             <span className="text-slate-300">
               {footer.builtWith.join(" • ")}
             </span>
           </p>
 
-          <p className="mt-2 text-xs text-slate-600">{footer.copyright}</p>
+          <p className="mt-2 text-xs text-slate-600">
+            © {new Date().getFullYear()} YoaDevOps Consulting · Yoan Carlos
+            Licourt Acosta. {t.footer.copyright}
+          </p>
         </div>
 
         {/* Social */}

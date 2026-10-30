@@ -1,27 +1,20 @@
 import { useEffect, useState } from "react";
-
-const ROLES = [
-  "FULLSTACK ENGINEER",
-  "FRONTEND DEVELOPER",
-  "BACKEND DEVELOPER",
-  "DEVOPS ENGINEER",
-  "PLATFORM ENGINEER",
-];
+import { useLang } from "@/i18n/LanguageContext";
 
 const TYPE_MS = 70;
 const DELETE_MS = 35;
 const HOLD_MS = 1800;
 
-function useTypewriter(): string {
+function useTypewriter(roles: string[]): string {
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setText(ROLES[0]);
+      setText(roles[0]);
       return;
     }
-    const current = ROLES[roleIndex % ROLES.length];
+    const current = roles[roleIndex % roles.length];
     let charIndex = 0;
     let deleting = false;
     let timer: ReturnType<typeof setTimeout>;
@@ -40,7 +33,7 @@ function useTypewriter(): string {
         charIndex -= 1;
         setText(current.slice(0, charIndex));
         if (charIndex <= 0) {
-          setRoleIndex((i) => (i + 1) % ROLES.length);
+          setRoleIndex((i) => (i + 1) % roles.length);
           return;
         }
         timer = setTimeout(tick, DELETE_MS);
@@ -49,13 +42,14 @@ function useTypewriter(): string {
 
     timer = setTimeout(tick, 500);
     return () => clearTimeout(timer);
-  }, [roleIndex]);
+  }, [roleIndex, roles]);
 
   return text;
 }
 
 export const Presentation = () => {
-  const typed = useTypewriter();
+  const { t } = useLang();
+  const typed = useTypewriter(t.hero.roles);
 
   return (
     <>
@@ -67,7 +61,7 @@ export const Presentation = () => {
             YOAN CARLOS LICOURT ACOSTA
           </h1>
           <h2
-            aria-label="Fullstack Engineer, Frontend Developer, Backend Developer, DevOps Engineer, Platform Engineer"
+            aria-label={t.hero.roles.join(", ")}
             className="mt-10 min-h-[4rem] text-xl font-bold tracking-tight text-white sm:min-h-[4.5rem] sm:text-4xl"
           >
             <span aria-hidden="true">
@@ -76,7 +70,7 @@ export const Presentation = () => {
             </span>
           </h2>
           <span className="mt-10 block text-lg leading-8 text-gray-300">
-            I build the systems small businesses run on — and they keep working when the connection doesn&apos;t.
+            {t.hero.tagline}
           </span>
 
           {/* Botones adaptables */}
@@ -87,14 +81,14 @@ export const Presentation = () => {
               rel="noopener noreferrer"
               className="text-center text-black border-cyan-300 bg-cyan-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
             >
-              VIEW MY WORK
+              {t.hero.viewWork}
             </a>
             <a
               href="/Yoan_Devops_Platform_CV.pdf"
               download
               className="text-center text-orange-400 border-orange-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
             >
-              DOWNLOAD CV
+              {t.hero.downloadCv}
             </a>
           </div>
         </div>
@@ -104,7 +98,7 @@ export const Presentation = () => {
           <div className="flex-none">
             <img
               src="/profile.png"
-              alt="Profile Header"
+              alt={t.hero.profileAlt}
               className="w-56 h-56 sm:w-80 sm:h-80 mx-auto mt-6 lg:mt-0 rounded-full object-cover border-2 border-cyan-500/40 shadow-2xl shadow-cyan-500/20 ring-4 ring-slate-800/80"
             />
           </div>
