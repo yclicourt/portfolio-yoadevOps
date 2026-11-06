@@ -218,6 +218,11 @@ const en: Dict = {
         description:
           "Live SaaS product I founded and built end to end: management platform for Cuban small businesses (mipymes) covering invoicing, inventory and daily cash-register control in a single installable PWA. Multi-tenant architecture on Supabase (PostgreSQL, Auth, Row Level Security) with transactional Postgres RPCs for consecutive invoice numbering and atomic stock decrement, member invitations by email, offline data reading with a persisted client cache, PDF invoices shared via WhatsApp, and a full test suite (Vitest unit tests + a Playwright E2E of the complete daily flow). Deployed in production on Vercel.",
       },
+      "Buildora — Full-Stack Scaffold Generator": {
+        title: "Buildora — Full-Stack Scaffold Generator",
+        description:
+          "Free open-source scaffold generator (MIT) I built from three real, working apps: one command generates a complete full-stack project with auth, database, Docker and CI working from the first commit. Three golden paths — Next.js + NestJS + Prisma, React + Vite + Django, and Angular + FastAPI — all on PostgreSQL + Redis. Published on npm as buildora (npx buildora generate my-app), with the template extracted from the reference apps and verified with tests and green CI.",
+      },
       "Ecommerce Full-Stack Platform": {
         title: "Ecommerce Full-Stack Platform",
         description:
@@ -399,6 +404,11 @@ const es: Dict = {
         title: "CajaYa — Mipyme Management SaaS",
         description:
           "Producto SaaS en vivo que fundé y construí de principio a fin: plataforma de gestión para pequeños negocios cubanos (mipymes) que cubre facturación, inventario y control diario de caja en una sola PWA instalable. Arquitectura multi-tenant sobre Supabase (PostgreSQL, Auth, Row Level Security) con RPCs transaccionales de Postgres para la numeración consecutiva de facturas y el descuento atómico de inventario, invitaciones de miembros por correo, lectura de datos sin conexión con caché persistente en el cliente, facturas PDF compartidas por WhatsApp y una suite completa de pruebas (pruebas unitarias Vitest + un E2E Playwright del flujo diario completo). Desplegado en producción en Vercel.",
+      },
+      "Buildora — Full-Stack Scaffold Generator": {
+        title: "Buildora — Full-Stack Scaffold Generator",
+        description:
+          "Generador de andamiaje open source y gratis (MIT) que construí a partir de tres aplicaciones reales y funcionando: un comando genera un proyecto full-stack completo con auth, base de datos, Docker y CI funcionando desde el primer commit. Tres caminos — Next.js + NestJS + Prisma, React + Vite + Django y Angular + FastAPI — todos con PostgreSQL + Redis. Publicado en npm como buildora (npx buildora generate mi-app), con la plantilla extraída de las apps de referencia y verificada con tests y CI en verde.",
       },
       "Ecommerce Full-Stack Platform": {
         title: "Ecommerce Full-Stack Platform",

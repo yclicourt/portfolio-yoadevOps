@@ -1,5 +1,6 @@
 // Orden de las tarjetas: DevOps abre con la plataforma tasks-app y
-// Fullstack con CajaYa (el producto SaaS en producción).
+// Fullstack con CajaYa (el producto SaaS en producción), seguido de
+// Buildora (el generador de andamiaje, segundo por importancia).
 export interface Project {
   title: string;
   category: "devops" | "fullstack";
@@ -93,6 +94,25 @@ export const projects: Project[] = [
       "TanStack Query",
       "PWA",
       "Vercel",
+    ],
+  },
+  {
+    title: "Buildora — Full-Stack Scaffold Generator",
+    category: "fullstack",
+    icon: "/images/projects/buildora.svg",
+    href: "https://buildora-landing.vercel.app/",
+    description:
+      "Free open-source scaffold generator (MIT) I built from three real, working apps: one command generates a complete full-stack project with auth, database, Docker and CI working from the first commit. Three golden paths — Next.js + NestJS + Prisma, React + Vite + Django, and Angular + FastAPI — all on PostgreSQL + Redis. Published on npm as buildora (npx buildora generate my-app), with the template extracted from the reference apps and verified with tests and green CI.",
+    tools: [
+      "Next.js",
+      "NestJS",
+      "Django",
+      "Angular",
+      "FastAPI",
+      "TypeScript",
+      "Docker",
+      "PostgreSQL",
+      "Redis",
     ],
   },
   {
