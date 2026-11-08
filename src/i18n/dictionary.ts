@@ -25,6 +25,14 @@ export interface ProjectContent {
   description: string;
 }
 
+export interface MipymeServiceContent {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+  price: string;
+}
+
 interface Dict {
   nav: { name: string; href: string }[];
   contactCta: string;
@@ -49,6 +57,17 @@ interface Dict {
     items: ServiceContent[];
     cta: string;
     terms: string;
+  };
+  mipymeServices: {
+    title: string;
+    subtitle: string;
+    items: MipymeServiceContent[];
+    howTitle: string;
+    steps: string[];
+    cta: string;
+    emailLabel: string;
+    backToHome: string;
+    footerNote: string;
   };
   projects: {
     title: string;
@@ -91,6 +110,7 @@ const en: Dict = {
     { name: "Skills", href: "#skills" },
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
+    { name: "Mipymes", href: "/mipymes" },
   ],
   contactCta: "Contact Me 🚀",
   toggleMenu: "Toggle Menu",
@@ -185,6 +205,87 @@ const en: Dict = {
     terms:
       "Remote-first · LATAM / EU time zones · Contract-based · Paid in USD stablecoins",
   },
+  mipymeServices: {
+    title: "Services for small businesses",
+    subtitle:
+      "Websites, stores and systems for businesses in Cuba. No public cloud, no complications: message me on WhatsApp, I quote you in writing and we build it.",
+    items: [
+      {
+        id: "landing-web",
+        icon: "globe",
+        title: "Landing page or company website",
+        description:
+          "A page for your business: what you sell, services, photos, location and a WhatsApp button. Fast on the phone.",
+        price: "from $250",
+      },
+      {
+        id: "tienda-whatsapp",
+        icon: "cart",
+        title: "Online store with WhatsApp orders",
+        description:
+          "Catalog with photos and prices. The customer builds their order and it reaches you on WhatsApp; they pay by Transfermóvil, EnZona or cash.",
+        price: "from $500",
+      },
+      {
+        id: "cajaya",
+        icon: "cashRegister",
+        title: "CajaYa — management for your business",
+        description:
+          "Invoicing, inventory and cash register in one place. 7-day free trial.",
+        price: "$30/month or $300/year",
+      },
+      {
+        id: "sistema-medida",
+        icon: "cogs",
+        title: "Custom management system",
+        description:
+          "When CajaYa is not enough: I build the system for your process, with your stack.",
+        price: "from $1,000",
+      },
+      {
+        id: "mantenimiento",
+        icon: "sync",
+        title: "Monthly maintenance",
+        description:
+          "Updates, backups, monitoring and small changes. Your website and system without going down.",
+        price: "from 500 CUP/month",
+      },
+      {
+        id: "redes-servidores",
+        icon: "network",
+        title: "Networks, servers and equipment at your premises",
+        description:
+          "WiFi, shared folders, printers, server and backups. On-site work, cash payment.",
+        price: "Price to agree",
+      },
+      {
+        id: "arreglar-migrar",
+        icon: "tools",
+        title: "Fix or migrate what you already have",
+        description:
+          "Old website that won't load, broken WordPress, everything in Excel and on paper: I review it and leave it working.",
+        price: "Quote depends on the job",
+      },
+      {
+        id: "diagnostico",
+        icon: "clipboard",
+        title: "Paid diagnostic",
+        description:
+          "I review how you handle sales, inventory and cash and give you in writing what's wrong and what I would do. Deducted if you hire the fix.",
+        price: "Price to agree",
+      },
+    ],
+    howTitle: "How I work",
+    steps: [
+      "Message me on WhatsApp and tell me what your business needs.",
+      "I send you the quote in writing: what's included, total price and what's not included.",
+      "50% upfront and 50% on delivery. The quote is valid for 7 days.",
+    ],
+    cta: "Message me on WhatsApp",
+    emailLabel: "or write to me at",
+    backToHome: "← Back to home",
+    footerNote: "© 2026 Yoan Carlos Licourt Acosta · YoaDevOps Consulting",
+  },
   projects: {
     title: "Projects",
     fullstackTitle: "Fullstack Development",
@@ -276,6 +377,7 @@ const es: Dict = {
     { name: "Habilidades", href: "#skills" },
     { name: "Servicios", href: "#services" },
     { name: "Proyectos", href: "#projects" },
+    { name: "Mipymes", href: "/mipymes" },
   ],
   contactCta: "Contáctame 🚀",
   toggleMenu: "Alternar menú",
@@ -369,6 +471,87 @@ const es: Dict = {
     cta: "Iniciar un proyecto",
     terms:
       "Remoto primero · Zonas horarias LATAM / UE · Por contrato · Pago en stablecoins USD",
+  },
+  mipymeServices: {
+    title: "Servicios para mipymes",
+    subtitle:
+      "Webs, tiendas y sistemas para negocios en Cuba. Sin nube pública, sin complicaciones: me escribes por WhatsApp, te cotizo por escrito y lo construimos.",
+    items: [
+      {
+        id: "landing-web",
+        icon: "globe",
+        title: "Landing o web institucional",
+        description:
+          "Una página de tu negocio: qué vendes, servicios, fotos, ubicación y botón de WhatsApp. Rápida en el teléfono.",
+        price: "desde $250",
+      },
+      {
+        id: "tienda-whatsapp",
+        icon: "cart",
+        title: "Tienda online con pedidos por WhatsApp",
+        description:
+          "Catálogo con fotos y precios. El cliente arma su pedido y te llega por WhatsApp; paga por Transfermóvil, EnZona o efectivo.",
+        price: "desde $500",
+      },
+      {
+        id: "cajaya",
+        icon: "cashRegister",
+        title: "CajaYa — gestión para tu negocio",
+        description:
+          "Facturación, inventario y caja en un solo lugar. 7 días de prueba gratis.",
+        price: "$30/mes o $300/año",
+      },
+      {
+        id: "sistema-medida",
+        icon: "cogs",
+        title: "Sistema de gestión a medida",
+        description:
+          "Cuando CajaYa no alcanza: construyo el sistema para tu proceso, con tu stack.",
+        price: "desde $1,000",
+      },
+      {
+        id: "mantenimiento",
+        icon: "sync",
+        title: "Mantenimiento mensual",
+        description:
+          "Actualizaciones, copias de seguridad, monitoreo y cambios pequeños. Tu web y tu sistema sin caerse.",
+        price: "desde 500 CUP/mes",
+      },
+      {
+        id: "redes-servidores",
+        icon: "network",
+        title: "Redes, servidores y equipos en tu local",
+        description:
+          "WiFi, carpetas compartidas, impresoras, servidor y copias de seguridad. Trabajo presencial, en efectivo.",
+        price: "Precio a convenir",
+      },
+      {
+        id: "arreglar-migrar",
+        icon: "tools",
+        title: "Arreglar o migrar lo que ya tienes",
+        description:
+          "Web vieja que no carga, WordPress roto, todo en Excel y papel: lo reviso y lo dejo funcionando.",
+        price: "Cotización según el trabajo",
+      },
+      {
+        id: "diagnostico",
+        icon: "clipboard",
+        title: "Diagnóstico pagado",
+        description:
+          "Reviso cómo llevas ventas, inventario y caja y te entrego por escrito qué está mal y qué haría. Se descuenta si contratas el arreglo.",
+        price: "Precio a convenir",
+      },
+    ],
+    howTitle: "Cómo trabajo",
+    steps: [
+      "Escríbeme por WhatsApp y cuéntame qué necesita tu negocio.",
+      "Te mando la cotización por escrito: qué incluye, precio total y qué no incluye.",
+      "50% al inicio y 50% a la entrega. La cotización vale 7 días.",
+    ],
+    cta: "Escríbeme por WhatsApp",
+    emailLabel: "o escríbeme a",
+    backToHome: "← Volver al inicio",
+    footerNote: "© 2026 Yoan Carlos Licourt Acosta · YoaDevOps Consulting",
   },
   projects: {
     title: "Proyectos",

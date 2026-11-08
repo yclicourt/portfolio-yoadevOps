@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { AboutMe } from "./components/AboutMe";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -8,10 +8,22 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Services } from "./components/Services";
 import { Testimonials } from "./components/Testimonials";
+import { MipymesPage } from "./components/MipymesPage";
 import { Background } from "./components/common/Background";
 import { ButtonUp } from "./components/common/ButtonUp";
 
-function App({ children }: { children?: ReactNode }) {
+// Router mínimo sin dependencias: la ruta es el pathname.
+// "/" = la homepage actual, tal como está (DevOps/fullstack).
+// "/mipymes" = la página aparte de servicios para mipymes.
+// Vercel sirve index.html para cualquier ruta (vercel.json), así que
+// un enlace directo a /mipymes no da 404.
+function getRoute(): string {
+  if (typeof window === "undefined") return "/";
+  const path = window.location.pathname.replace(/\/+$/, "");
+  return path === "" ? "/" : path;
+}
+
+function HomePage({ children }: { children?: ReactNode }) {
   return (
     <>
       <div>
@@ -52,6 +64,25 @@ function App({ children }: { children?: ReactNode }) {
       </div>
     </>
   );
+}
+
+function App({ children }: { children?: ReactNode }) {
+  const [route, setRoute] = useState<string>(getRoute);
+
+  useEffect(() => {
+    const onPopState = () => setRoute(getRoute());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [route]);
+
+  if (route === "/mipymes") {
+    return <MipymesPage />;
+  }
+  return <HomePage>{children}</HomePage>;
 }
 
 export default App;
