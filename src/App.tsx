@@ -11,6 +11,7 @@ import { Testimonials } from "./components/Testimonials";
 import { MipymesPage } from "./components/MipymesPage";
 import { Background } from "./components/common/Background";
 import { ButtonUp } from "./components/common/ButtonUp";
+import { useRouteMeta } from "./seo/routeMeta";
 
 // Router mínimo sin dependencias: la ruta es el pathname.
 // "/" = la homepage actual, tal como está (DevOps/fullstack).
@@ -68,6 +69,10 @@ function HomePage({ children }: { children?: ReactNode }) {
 
 function App({ children }: { children?: ReactNode }) {
   const [route, setRoute] = useState<string>(getRoute);
+
+  // Per-route title/description (helps Google + browser tabs; it does
+  // NOT fix social crawlers — they need the prerendered HTML).
+  useRouteMeta(route);
 
   useEffect(() => {
     const onPopState = () => setRoute(getRoute());
