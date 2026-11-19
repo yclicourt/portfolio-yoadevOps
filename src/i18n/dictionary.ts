@@ -184,7 +184,7 @@ const en: Dict = {
         title: "AI agent for WhatsApp",
         tagline:
           "An agent that serves your customers on WhatsApp 24/7: it answers questions, takes bookings and orders, and passes you only what needs a person.",
-        badge: "custom quote",
+        badge: "from $800",
         deliverables: [
           "Serves customers on WhatsApp 24/7",
           "Answers questions, takes bookings and orders",
@@ -280,7 +280,7 @@ const en: Dict = {
       {
         question: "How much does it cost in total?",
         answer:
-          "It depends on the scope. The prices above are the starting point; the written proposal gives you the exact price before we start, with no surprises.",
+          "It depends on the scope. The prices above are the starting point; the written proposal gives you the exact price before we start, with no surprises. The WhatsApp AI agent also has a $30/month maintenance fee after setup, for updates and monitoring; WhatsApp's own message fees are charged by Meta at cost.",
       },
       {
         question: "How do I pay?",
@@ -485,7 +485,7 @@ const es: Dict = {
         title: "Agente de IA para WhatsApp",
         tagline:
           "Un agente que atiende a tus clientes por WhatsApp 24/7: responde preguntas, toma reservas y pedidos, y te pasa solo lo que necesita una persona.",
-        badge: "a cotizar",
+        badge: "desde $800",
         deliverables: [
           "Atiende por WhatsApp 24/7",
           "Responde preguntas, toma reservas y pedidos",
@@ -581,7 +581,7 @@ const es: Dict = {
       {
         question: "¿Cuánto cuesta en total?",
         answer:
-          "Depende del alcance. Los precios de arriba son el punto de partida; la propuesta escrita te da el precio exacto antes de empezar, sin sorpresas.",
+          "Depende del alcance. Los precios de arriba son el punto de partida; la propuesta escrita te da el precio exacto antes de empezar, sin sorpresas. El agente de IA para WhatsApp además lleva $30/mes de mantenimiento después de la puesta en marcha, por actualizaciones y supervisión; los cargos de WhatsApp por mensaje los cobra Meta al costo.",
       },
       {
         question: "¿Cómo se paga?",
