@@ -1,4 +1,13 @@
-import { FaCheck, FaLifeRing, FaRocket } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaCheck,
+  FaCogs,
+  FaGlobe,
+  FaLifeRing,
+  FaRobot,
+  FaRocket,
+  FaShoppingCart,
+} from "react-icons/fa";
 import { SiKubernetes } from "react-icons/si";
 import { useLang } from "@/i18n/LanguageContext";
 
@@ -6,6 +15,11 @@ const iconMap: Record<string, React.ReactNode> = {
   kubernetes: <SiKubernetes className="w-8 h-8 text-cyan-400" />,
   rocket: <FaRocket className="w-8 h-8 text-cyan-400" />,
   lifering: <FaLifeRing className="w-8 h-8 text-cyan-400" />,
+  globe: <FaGlobe className="w-8 h-8 text-cyan-400" />,
+  cart: <FaShoppingCart className="w-8 h-8 text-cyan-400" />,
+  calendar: <FaCalendarAlt className="w-8 h-8 text-cyan-400" />,
+  cogs: <FaCogs className="w-8 h-8 text-cyan-400" />,
+  robot: <FaRobot className="w-8 h-8 text-cyan-400" />,
 };
 
 export const Services = () => {
@@ -56,7 +70,7 @@ export const Services = () => {
                 {iconMap[service.icon]}
               </div>
               <span className="rounded-full border border-orange-400/30 bg-orange-400/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange-300">
-                {service.timeline}
+                {service.badge}
               </span>
             </div>
 
@@ -81,7 +95,9 @@ export const Services = () => {
 
             {/* CTA */}
             <a
-              href="#contact"
+              href="https://wa.me/5351877879"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
                 mt-8
                 rounded-lg

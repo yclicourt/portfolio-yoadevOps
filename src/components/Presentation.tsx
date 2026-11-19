@@ -1,55 +1,8 @@
-import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { useLang } from "@/i18n/LanguageContext";
-
-const TYPE_MS = 70;
-const DELETE_MS = 35;
-const HOLD_MS = 1800;
-
-function useTypewriter(roles: string[]): string {
-  const [text, setText] = useState("");
-  const [roleIndex, setRoleIndex] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setText(roles[0]);
-      return;
-    }
-    const current = roles[roleIndex % roles.length];
-    let charIndex = 0;
-    let deleting = false;
-    let timer: ReturnType<typeof setTimeout>;
-
-    const tick = () => {
-      if (!deleting) {
-        charIndex += 1;
-        setText(current.slice(0, charIndex));
-        if (charIndex >= current.length) {
-          deleting = true;
-          timer = setTimeout(tick, HOLD_MS);
-          return;
-        }
-        timer = setTimeout(tick, TYPE_MS);
-      } else {
-        charIndex -= 1;
-        setText(current.slice(0, charIndex));
-        if (charIndex <= 0) {
-          setRoleIndex((i) => (i + 1) % roles.length);
-          return;
-        }
-        timer = setTimeout(tick, DELETE_MS);
-      }
-    };
-
-    timer = setTimeout(tick, 500);
-    return () => clearTimeout(timer);
-  }, [roleIndex, roles]);
-
-  return text;
-}
 
 export const Presentation = () => {
   const { t } = useLang();
-  const typed = useTypewriter(t.hero.roles);
 
   return (
     <>
@@ -57,38 +10,32 @@ export const Presentation = () => {
 
         {/* Columna Izquierda: Textos y Botones */}
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:max-w-xl">
-          <h1 className="mt-15 text-2xl font-bold tracking-tight text-white sm:text-6xl">
-            YOAN CARLOS LICOURT ACOSTA
+          <p className="text-sm font-bold uppercase tracking-widest text-cyan-400">
+            {t.hero.eyebrow}
+          </p>
+          <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+            {t.hero.title}
           </h1>
-          <h2
-            aria-label={t.hero.roles.join(", ")}
-            className="mt-10 min-h-[4rem] text-xl font-bold tracking-tight text-white sm:min-h-[4.5rem] sm:text-4xl"
-          >
-            <span aria-hidden="true">
-              {typed}
-              <span className="animate-blink text-cyan-400">|</span>
-            </span>
-          </h2>
-          <span className="mt-10 block text-lg leading-8 text-gray-300">
+          <span className="mt-6 block text-lg leading-8 text-gray-300">
             {t.hero.tagline}
           </span>
 
           {/* Botones adaptables */}
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href="https://github.com/yclicourt"
+              href="https://wa.me/5351877879"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center text-black border-cyan-300 bg-cyan-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
+              className="flex items-center justify-center gap-2 text-center text-black border-cyan-300 bg-cyan-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
             >
-              {t.hero.viewWork}
+              <FaWhatsapp />
+              {t.hero.whatsappCta}
             </a>
             <a
-              href="/Yoan_Devops_Platform_CV.pdf"
-              download
-              className="text-center text-orange-400 border-orange-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
+              href="#services"
+              className="text-center text-cyan-300 border-cyan-400 border-2 px-6 py-3 rounded-md text-base sm:text-xl font-bold hover:text-white transition"
             >
-              {t.hero.downloadCv}
+              {t.hero.viewServices}
             </a>
           </div>
         </div>

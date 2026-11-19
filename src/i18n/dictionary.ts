@@ -16,7 +16,7 @@ export interface ServiceContent {
   icon: string;
   title: string;
   tagline: string;
-  timeline: string;
+  badge: string;
   deliverables: string[];
 }
 
@@ -25,31 +25,19 @@ export interface ProjectContent {
   description: string;
 }
 
-export interface MipymeServiceContent {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-  price: string;
-}
-
 interface Dict {
   nav: { name: string; href: string }[];
   contactCta: string;
   toggleMenu: string;
   hero: {
-    roles: string[];
+    eyebrow: string;
+    title: string;
     tagline: string;
-    viewWork: string;
-    downloadCv: string;
+    whatsappCta: string;
+    viewServices: string;
     profileAlt: string;
   };
   about: { title: string; text: string };
-  skills: {
-    title: string;
-    subtitle: string;
-    categories: Record<string, string>;
-  };
   services: {
     title: string;
     subtitleBefore: string;
@@ -58,16 +46,22 @@ interface Dict {
     cta: string;
     terms: string;
   };
-  mipymeServices: {
+  techServices: {
     title: string;
     subtitle: string;
-    items: MipymeServiceContent[];
-    howTitle: string;
-    steps: string[];
+    items: ServiceContent[];
     cta: string;
-    emailLabel: string;
-    backToHome: string;
-    footerNote: string;
+    terms: string;
+  };
+  process: {
+    title: string;
+    subtitle: string;
+    steps: { title: string; text: string }[];
+  };
+  faq: {
+    title: string;
+    subtitle: string;
+    items: { question: string; answer: string }[];
   };
   projects: {
     title: string;
@@ -76,6 +70,7 @@ interface Dict {
     devopsTitle: string;
     devopsSubtitle: string;
     viewProject: string;
+    stackNote: string;
     items: Record<string, ProjectContent>;
   };
   testimonials: {
@@ -107,60 +102,111 @@ const en: Dict = {
   nav: [
     { name: "Home", href: "#" },
     { name: "About Me", href: "#about" },
-    { name: "Skills", href: "#skills" },
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
-    { name: "Mipymes", href: "/mipymes" },
+    { name: "Contact", href: "#contact" },
   ],
   contactCta: "Contact Me 🚀",
   toggleMenu: "Toggle Menu",
   hero: {
-    roles: [
-      "FULLSTACK ENGINEER",
-      "FRONTEND DEVELOPER",
-      "BACKEND DEVELOPER",
-      "DEVOPS ENGINEER",
-      "PLATFORM ENGINEER",
-    ],
+    eyebrow: "YoaDevOps Consulting",
+    title: "Websites and systems for businesses that still work by hand.",
     tagline:
-      "I build the systems small businesses run on — and they keep working when the connection doesn't.",
-    viewWork: "VIEW MY WORK",
-    downloadCv: "DOWNLOAD CV",
+      "I'm Yoan, founder of YoaDevOps Consulting. I build the website, store or system your business needs, with price and scope in writing before we start. 100% remote, for Latin America and Europe.",
+    whatsappCta: "Message me on WhatsApp",
+    viewServices: "See services & prices",
     profileAlt: "Profile Header",
   },
   about: {
     title: "About Me",
     text: "Fullstack Developer with 6+ years of experience building the systems small businesses run on: invoicing, inventory, cash register, and customer management — designed to keep working when the connection doesn't. Founder and lead developer of CajaYa, a management SaaS for Cuban mipymes live in production, and builder of ecommerce platforms and client websites for real-estate and logistics businesses. I work across React, Next.js, and Angular frontends; NestJS, Express, and Django backends; and PostgreSQL with Prisma and Supabase. My edge: a Senior Infrastructure Engineer background (enterprise environments, 100+ VMs, Kubernetes, GitOps, CI/CD, and observability) — so everything I build, I also deploy, back up, and operate in production.",
   },
-  skills: {
-    title: "Skills",
-    subtitle: "The toolkit I use to build, ship, and operate web applications.",
-    categories: {
-      frontend: "Frontend Development",
-      backend: "Backend Development",
-      data: "Databases & Data Layer",
-      testing: "Testing & Tools",
-      containers: "Containers & Orchestration",
-      iac: "Infrastructure as Code",
-      cicd: "CI/CD & Delivery",
-      gitops: "GitOps",
-      observability: "Observability & Monitoring",
-      registry: "Container Registry & Security",
-      virtualization: "Infrastructure & Virtualization",
-      os: "Operating Systems",
-    },
-  },
   services: {
     title: "Services",
-    subtitleBefore: "Productized consulting from",
-    subtitleAfter: "— fixed scope, fixed timeline, no surprises.",
+    subtitleBefore: "What your business gets from",
+    subtitleAfter: "— price and scope in writing before we start.",
+    items: [
+      {
+        id: "landing",
+        icon: "globe",
+        title: "Landing page or website",
+        tagline:
+          "A page for your business: what you sell, services, photos, location and a WhatsApp button. Fast on the phone. Design included.",
+        badge: "from $250",
+        deliverables: [
+          "What you sell, services, photos and location",
+          "WhatsApp button on every screen",
+          "Design included, fast on the phone",
+        ],
+      },
+      {
+        id: "online-store",
+        icon: "cart",
+        title: "Online store",
+        tagline:
+          "Catalog with photos and prices. The customer builds their order and it reaches you on WhatsApp; you confirm and charge as you already do.",
+        badge: "from $500",
+        deliverables: [
+          "Catalog with photos and prices",
+          "The order reaches you on WhatsApp",
+          "You confirm and charge as you already do",
+        ],
+      },
+      {
+        id: "booking-system",
+        icon: "calendar",
+        title: "Booking system",
+        tagline:
+          "Your customers pick the service and the time online, and everything lands in a calendar: no more back-and-forth messages to confirm each appointment. Services and prices page included.",
+        badge: "from $1,000",
+        deliverables: [
+          "The customer picks the service and the time",
+          "Everything lands in one calendar",
+          "Services and prices page included",
+        ],
+      },
+      {
+        id: "custom-system",
+        icon: "cogs",
+        title: "Custom system",
+        tagline:
+          "When off-the-shelf is not enough: I build the system for your process (sales, inventory, cash register, customers), with your rules.",
+        badge: "from $1,000",
+        deliverables: [
+          "Built for your process",
+          "Sales, inventory, cash register and customers",
+          "With your rules",
+        ],
+      },
+      {
+        id: "ai-agent",
+        icon: "robot",
+        title: "AI agent for WhatsApp",
+        tagline:
+          "An agent that serves your customers on WhatsApp 24/7: it answers questions, takes bookings and orders, and passes you only what needs a person.",
+        badge: "custom quote",
+        deliverables: [
+          "Serves customers on WhatsApp 24/7",
+          "Answers questions, takes bookings and orders",
+          "Passes you only what needs a person",
+        ],
+      },
+    ],
+    cta: "Message me on WhatsApp",
+    terms:
+      "Free quote · Written proposal with scope and price · 50% upfront, 50% on delivery",
+  },
+  techServices: {
+    title: "For tech teams",
+    subtitle:
+      "Besides business services, I work with teams that need platform and infrastructure. Custom quote in each case.",
     items: [
       {
         id: "mvp-express",
         icon: "rocket",
         title: "MVP Express",
         tagline: "Production-ready web app in 30 days.",
-        timeline: "30 days",
+        badge: "30 days",
         deliverables: [
           "Frontend: React / Next.js or Angular",
           "Backend: NestJS / Express or Django",
@@ -175,7 +221,7 @@ const en: Dict = {
         icon: "kubernetes",
         title: "Platform Setup",
         tagline: "Kubernetes + GitOps platform, live in 2 weeks.",
-        timeline: "2 weeks",
+        badge: "2 weeks",
         deliverables: [
           "Production-ready Kubernetes cluster (k3s / Kubernetes)",
           "GitOps delivery with ArgoCD",
@@ -190,7 +236,7 @@ const en: Dict = {
         icon: "lifering",
         title: "DevOps Rescue",
         tagline: "Audit & recovery of your pipelines and infrastructure.",
-        timeline: "1–2 weeks",
+        badge: "1–2 weeks",
         deliverables: [
           "Full audit of CI/CD, IaC and clusters",
           "Prioritized remediation plan",
@@ -205,86 +251,67 @@ const en: Dict = {
     terms:
       "Remote-first · LATAM / EU time zones · Contract-based · Paid in USD stablecoins",
   },
-  mipymeServices: {
-    title: "Services for small businesses",
-    subtitle:
-      "Websites, stores and systems for businesses in Cuba. No public cloud, no complications: message me on WhatsApp, I quote you in writing and we build it.",
+  process: {
+    title: "How we work",
+    subtitle: "Four steps, no surprises.",
+    steps: [
+      {
+        title: "You message me",
+        text: "Write to me on WhatsApp. Tell me what you need and how you work today.",
+      },
+      {
+        title: "Written proposal",
+        text: "I send you a proposal in writing: scope, exact price and timeline. No commitment.",
+      },
+      {
+        title: "We start with 50%",
+        text: "I build the system and show you progress as it takes shape.",
+      },
+      {
+        title: "Delivery and the other 50%",
+        text: "I deliver it working, with a walkthrough of how to use it. Support and changes after, by agreement.",
+      },
+    ],
+  },
+  faq: {
+    title: "Frequently asked questions",
+    subtitle: "The short answers, before you even ask.",
     items: [
       {
-        id: "landing-web",
-        icon: "globe",
-        title: "Landing page or company website",
-        description:
-          "A page for your business: what you sell, services, photos, location and a WhatsApp button. Fast on the phone.",
-        price: "from $250",
+        question: "How much does it cost in total?",
+        answer:
+          "It depends on the scope. The prices above are the starting point; the written proposal gives you the exact price before we start, with no surprises.",
       },
       {
-        id: "tienda-whatsapp",
-        icon: "cart",
-        title: "Online store with WhatsApp orders",
-        description:
-          "Catalog with photos and prices. The customer builds their order and it reaches you on WhatsApp; they pay by Transfermóvil, EnZona or cash.",
-        price: "from $500",
+        question: "How do I pay?",
+        answer:
+          "50% to start and 50% on delivery, in USD. I accept several payment routes; we agree on it in writing in the proposal.",
       },
       {
-        id: "cajaya",
-        icon: "cashRegister",
-        title: "CajaYa — management for your business",
-        description:
-          "Invoicing, inventory and cash register in one place. 7-day free trial.",
-        price: "$30/month or $300/year",
+        question: "Do you work remote only?",
+        answer: "Yes, 100% remote, for Latin America and Europe, including Cuba.",
       },
       {
-        id: "sistema-medida",
-        icon: "cogs",
-        title: "Custom management system",
-        description:
-          "When CajaYa is not enough: I build the system for your process, with your stack.",
-        price: "from $1,000",
+        question: "How long does it take?",
+        answer:
+          "Each proposal carries its timeline in writing. As a reference: a complete app (MVP Express) in 30 days, a platform (Platform Setup) in 2 weeks.",
       },
       {
-        id: "mantenimiento",
-        icon: "sync",
-        title: "Monthly maintenance",
-        description:
-          "Updates, backups, monitoring and small changes. Your website and system without going down.",
-        price: "from 500 CUP/month",
+        question: "What do you need from me to start?",
+        answer:
+          "A WhatsApp conversation about how you work today and what you want to achieve. With that I prepare the proposal.",
       },
       {
-        id: "redes-servidores",
-        icon: "network",
-        title: "Networks, servers and equipment at your premises",
-        description:
-          "WiFi, shared folders, printers, server and backups. On-site work, cash payment.",
-        price: "Price to agree",
+        question: "What happens after delivery if something breaks or I want a change?",
+        answer:
+          "Support and changes by agreement, in writing. Nothing is left uncovered: if it's my mistake, I fix it.",
       },
       {
-        id: "arreglar-migrar",
-        icon: "tools",
-        title: "Fix or migrate what you already have",
-        description:
-          "Old website that won't load, broken WordPress, everything in Excel and on paper: I review it and leave it working.",
-        price: "Quote depends on the job",
-      },
-      {
-        id: "diagnostico",
-        icon: "clipboard",
-        title: "Paid diagnostic",
-        description:
-          "I review how you handle sales, inventory and cash and give you in writing what's wrong and what I would do. Deducted if you hire the fix.",
-        price: "Price to agree",
+        question: "What if my business has no stable internet?",
+        answer:
+          "Systems are built to keep working even when the connection drops, and data is backed up. That's part of the design, not an extra.",
       },
     ],
-    howTitle: "How I work",
-    steps: [
-      "Message me on WhatsApp and tell me what your business needs.",
-      "I send you the quote in writing: what's included, total price and what's not included.",
-      "50% upfront and 50% on delivery. The quote is valid for 7 days.",
-    ],
-    cta: "Message me on WhatsApp",
-    emailLabel: "or write to me at",
-    backToHome: "← Back to home",
-    footerNote: "© 2026 Yoan Carlos Licourt Acosta · YoaDevOps Consulting",
   },
   projects: {
     title: "Projects",
@@ -293,6 +320,8 @@ const en: Dict = {
     devopsTitle: "DevOps & Platform Engineering",
     devopsSubtitle: "Kubernetes platforms, GitOps delivery and infrastructure as code.",
     viewProject: "View Project",
+    stackNote:
+      "Built with React, Next.js, Angular, NestJS, Django, PostgreSQL, Prisma, Supabase and Kubernetes — everything I build, I also deploy and operate.",
     items: {
       "Tasks App — Platform Engineering": {
         title: "Tasks App — Platform Engineering",
@@ -353,7 +382,7 @@ const en: Dict = {
   contact: {
     title: "Contact Me",
     description:
-      "Do you have a proposal, a project in mind or want to talk about infrastructure and DevOps? Write to me and I will contact you as soon as possible",
+      "Do you run a business that still works by hand? Message me and let's talk.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     emailLabel: "Email",
@@ -374,60 +403,111 @@ const es: Dict = {
   nav: [
     { name: "Inicio", href: "#" },
     { name: "Sobre mí", href: "#about" },
-    { name: "Habilidades", href: "#skills" },
     { name: "Servicios", href: "#services" },
     { name: "Proyectos", href: "#projects" },
-    { name: "Mipymes", href: "/mipymes" },
+    { name: "Contacto", href: "#contact" },
   ],
   contactCta: "Contáctame 🚀",
   toggleMenu: "Alternar menú",
   hero: {
-    roles: [
-      "INGENIERO FULLSTACK",
-      "DESARROLLADOR FRONTEND",
-      "DESARROLLADOR BACKEND",
-      "INGENIERO DEVOPS",
-      "INGENIERO DE PLATAFORMA",
-    ],
+    eyebrow: "YoaDevOps Consulting",
+    title: "Sistemas y páginas web para negocios que todavía trabajan a mano.",
     tagline:
-      "Construyo los sistemas con los que operan los pequeños negocios — y siguen funcionando aunque se caiga la conexión.",
-    viewWork: "VER MI TRABAJO",
-    downloadCv: "DESCARGAR CV",
+      "Soy Yoan, fundador de YoaDevOps Consulting. Construyo la web, la tienda o el sistema que tu negocio necesita, con precio y alcance por escrito antes de empezar. Trabajo 100% remoto, para Latinoamérica y Europa.",
+    whatsappCta: "Escríbeme por WhatsApp",
+    viewServices: "Ver servicios y precios",
     profileAlt: "Foto de perfil",
   },
   about: {
     title: "Sobre mí",
     text: "Desarrollador Fullstack con más de 6 años de experiencia construyendo los sistemas con los que operan los pequeños negocios: facturación, inventario, caja y gestión de clientes — diseñados para seguir funcionando aunque se caiga la conexión. Fundador y desarrollador principal de CajaYa, un SaaS de gestión para mipymes cubanas en producción, y creador de plataformas ecommerce y sitios web para clientes de bienes raíces y logística. Trabajo con React, Next.js y Angular en el frontend; NestJS, Express y Django en el backend; y PostgreSQL con Prisma y Supabase. Mi ventaja: una trayectoria como Ingeniero Senior de Infraestructura (entornos empresariales, más de 100 VMs, Kubernetes, GitOps, CI/CD y observabilidad) — así que todo lo que construyo, también lo despliego, lo respaldo y lo opero en producción.",
   },
-  skills: {
-    title: "Habilidades",
-    subtitle: "Las herramientas que uso para construir, lanzar y operar aplicaciones web.",
-    categories: {
-      frontend: "Desarrollo Frontend",
-      backend: "Desarrollo Backend",
-      data: "Bases de datos y capa de datos",
-      testing: "Pruebas y herramientas",
-      containers: "Contenedores y orquestación",
-      iac: "Infraestructura como código",
-      cicd: "CI/CD y entregas",
-      gitops: "GitOps",
-      observability: "Observabilidad y monitoreo",
-      registry: "Registro de contenedores y seguridad",
-      virtualization: "Infraestructura y virtualización",
-      os: "Sistemas operativos",
-    },
-  },
   services: {
     title: "Servicios",
-    subtitleBefore: "Consultoría productizada de",
-    subtitleAfter: "— alcance fijo, plazo fijo, sin sorpresas.",
+    subtitleBefore: "Lo que tu negocio recibe de",
+    subtitleAfter: "— precio y alcance por escrito antes de empezar.",
+    items: [
+      {
+        id: "landing",
+        icon: "globe",
+        title: "Landing o página web",
+        tagline:
+          "Una página de tu negocio: qué vendes, servicios, fotos, ubicación y botón de WhatsApp. Rápida en el teléfono, con diseño incluido.",
+        badge: "desde $250",
+        deliverables: [
+          "Qué vendes, servicios, fotos y ubicación",
+          "Botón de WhatsApp en cada pantalla",
+          "Diseño incluido, rápida en el teléfono",
+        ],
+      },
+      {
+        id: "tienda",
+        icon: "cart",
+        title: "Tienda online",
+        tagline:
+          "Catálogo con fotos y precios. El cliente arma su pedido y te llega por WhatsApp; tú confirmas y cobras como ya lo haces.",
+        badge: "desde $500",
+        deliverables: [
+          "Catálogo con fotos y precios",
+          "El pedido te llega por WhatsApp",
+          "Confirmas y cobras como ya lo haces",
+        ],
+      },
+      {
+        id: "reservas",
+        icon: "calendar",
+        title: "Sistema de reservas",
+        tagline:
+          "Tus clientes eligen el servicio y la hora por internet, y todo queda en un calendario: sin mensajes de ida y vuelta para confirmar cada turno. Incluye página de servicios y precios.",
+        badge: "desde $1,000",
+        deliverables: [
+          "El cliente elige servicio y hora",
+          "Todo queda en un calendario",
+          "Página de servicios y precios incluida",
+        ],
+      },
+      {
+        id: "sistema-medida",
+        icon: "cogs",
+        title: "Sistema a medida",
+        tagline:
+          "Cuando lo que hay no alcanza: construyo el sistema para tu proceso (ventas, inventario, caja, clientes), con tus reglas.",
+        badge: "desde $1,000",
+        deliverables: [
+          "Hecho para tu proceso",
+          "Ventas, inventario, caja y clientes",
+          "Con tus reglas",
+        ],
+      },
+      {
+        id: "agente-ia",
+        icon: "robot",
+        title: "Agente de IA para WhatsApp",
+        tagline:
+          "Un agente que atiende a tus clientes por WhatsApp 24/7: responde preguntas, toma reservas y pedidos, y te pasa solo lo que necesita una persona.",
+        badge: "a cotizar",
+        deliverables: [
+          "Atiende por WhatsApp 24/7",
+          "Responde preguntas, toma reservas y pedidos",
+          "Te pasa solo lo que necesita una persona",
+        ],
+      },
+    ],
+    cta: "Escríbeme por WhatsApp",
+    terms:
+      "Cotización gratuita · Propuesta escrita con alcance y precio · 50% al inicio, 50% al entregar",
+  },
+  techServices: {
+    title: "Para equipos de tecnología",
+    subtitle:
+      "Además de los servicios para negocios, trabajo con equipos que necesitan plataforma e infraestructura. Precio a cotizar en cada caso.",
     items: [
       {
         id: "mvp-express",
         icon: "rocket",
         title: "MVP Express",
         tagline: "Aplicación web lista para producción en 30 días.",
-        timeline: "30 días",
+        badge: "30 días",
         deliverables: [
           "Frontend: React / Next.js o Angular",
           "Backend: NestJS / Express o Django",
@@ -442,7 +522,7 @@ const es: Dict = {
         icon: "kubernetes",
         title: "Platform Setup",
         tagline: "Plataforma Kubernetes + GitOps, en vivo en 2 semanas.",
-        timeline: "2 semanas",
+        badge: "2 semanas",
         deliverables: [
           "Clúster Kubernetes listo para producción (k3s / Kubernetes)",
           "Entrega GitOps con ArgoCD",
@@ -457,7 +537,7 @@ const es: Dict = {
         icon: "lifering",
         title: "DevOps Rescue",
         tagline: "Auditoría y recuperación de tus pipelines e infraestructura.",
-        timeline: "1–2 semanas",
+        badge: "1–2 semanas",
         deliverables: [
           "Auditoría completa de CI/CD, IaC y clústeres",
           "Plan de corrección priorizado",
@@ -472,86 +552,67 @@ const es: Dict = {
     terms:
       "Remoto primero · Zonas horarias LATAM / UE · Por contrato · Pago en stablecoins USD",
   },
-  mipymeServices: {
-    title: "Servicios para mipymes",
-    subtitle:
-      "Webs, tiendas y sistemas para negocios en Cuba. Sin nube pública, sin complicaciones: me escribes por WhatsApp, te cotizo por escrito y lo construimos.",
+  process: {
+    title: "Cómo trabajamos",
+    subtitle: "Cuatro pasos, sin sorpresas.",
+    steps: [
+      {
+        title: "Me escribes por WhatsApp",
+        text: "Me cuentas qué necesitas y cómo trabajas hoy.",
+      },
+      {
+        title: "Propuesta escrita",
+        text: "Te mando una propuesta escrita: alcance, precio exacto y plazo. Sin compromiso.",
+      },
+      {
+        title: "Empezamos con el 50%",
+        text: "Construyo el sistema y te voy mostrando avances.",
+      },
+      {
+        title: "Entrega y el otro 50%",
+        text: "Te entrego funcionando, con una explicación de cómo usarlo. Soporte y cambios después, por acuerdo.",
+      },
+    ],
+  },
+  faq: {
+    title: "Preguntas frecuentes",
+    subtitle: "Las respuestas cortas, antes de que preguntes.",
     items: [
       {
-        id: "landing-web",
-        icon: "globe",
-        title: "Landing o web institucional",
-        description:
-          "Una página de tu negocio: qué vendes, servicios, fotos, ubicación y botón de WhatsApp. Rápida en el teléfono.",
-        price: "desde $250",
+        question: "¿Cuánto cuesta en total?",
+        answer:
+          "Depende del alcance. Los precios de arriba son el punto de partida; la propuesta escrita te da el precio exacto antes de empezar, sin sorpresas.",
       },
       {
-        id: "tienda-whatsapp",
-        icon: "cart",
-        title: "Tienda online con pedidos por WhatsApp",
-        description:
-          "Catálogo con fotos y precios. El cliente arma su pedido y te llega por WhatsApp; paga por Transfermóvil, EnZona o efectivo.",
-        price: "desde $500",
+        question: "¿Cómo se paga?",
+        answer:
+          "50% al inicio y 50% al entregar, en USD. Acepto varias vías de pago; lo acordamos por escrito en la propuesta.",
       },
       {
-        id: "cajaya",
-        icon: "cashRegister",
-        title: "CajaYa — gestión para tu negocio",
-        description:
-          "Facturación, inventario y caja en un solo lugar. 7 días de prueba gratis.",
-        price: "$30/mes o $300/año",
+        question: "¿Trabajas solo remoto?",
+        answer: "Sí, 100% remoto, para Latinoamérica y Europa, incluida Cuba.",
       },
       {
-        id: "sistema-medida",
-        icon: "cogs",
-        title: "Sistema de gestión a medida",
-        description:
-          "Cuando CajaYa no alcanza: construyo el sistema para tu proceso, con tu stack.",
-        price: "desde $1,000",
+        question: "¿En cuánto tiempo está listo?",
+        answer:
+          "Cada propuesta lleva su plazo por escrito. Como referencia: una app completa (MVP Express) en 30 días, una plataforma (Platform Setup) en 2 semanas.",
       },
       {
-        id: "mantenimiento",
-        icon: "sync",
-        title: "Mantenimiento mensual",
-        description:
-          "Actualizaciones, copias de seguridad, monitoreo y cambios pequeños. Tu web y tu sistema sin caerse.",
-        price: "desde 500 CUP/mes",
+        question: "¿Qué necesitas de mí para empezar?",
+        answer:
+          "Una conversación por WhatsApp sobre cómo trabajas hoy y qué quieres lograr. Con eso te preparo la propuesta.",
       },
       {
-        id: "redes-servidores",
-        icon: "network",
-        title: "Redes, servidores y equipos en tu local",
-        description:
-          "WiFi, carpetas compartidas, impresoras, servidor y copias de seguridad. Trabajo presencial, en efectivo.",
-        price: "Precio a convenir",
+        question: "¿Y después de entregar, qué pasa si algo falla o quiero un cambio?",
+        answer:
+          "Soporte y cambios por acuerdo, por escrito. Nada queda sin cobertura: si algo es un error mío, lo corrijo.",
       },
       {
-        id: "arreglar-migrar",
-        icon: "tools",
-        title: "Arreglar o migrar lo que ya tienes",
-        description:
-          "Web vieja que no carga, WordPress roto, todo en Excel y papel: lo reviso y lo dejo funcionando.",
-        price: "Cotización según el trabajo",
-      },
-      {
-        id: "diagnostico",
-        icon: "clipboard",
-        title: "Diagnóstico pagado",
-        description:
-          "Reviso cómo llevas ventas, inventario y caja y te entrego por escrito qué está mal y qué haría. Se descuenta si contratas el arreglo.",
-        price: "Precio a convenir",
+        question: "¿Qué pasa si mi negocio no tiene internet estable?",
+        answer:
+          "Los sistemas se construyen para seguir trabajando aunque la conexión falle, y los datos se respaldan. Es parte del diseño, no un extra.",
       },
     ],
-    howTitle: "Cómo trabajo",
-    steps: [
-      "Escríbeme por WhatsApp y cuéntame qué necesita tu negocio.",
-      "Te mando la cotización por escrito: qué incluye, precio total y qué no incluye.",
-      "50% al inicio y 50% a la entrega. La cotización vale 7 días.",
-    ],
-    cta: "Escríbeme por WhatsApp",
-    emailLabel: "o escríbeme a",
-    backToHome: "← Volver al inicio",
-    footerNote: "© 2026 Yoan Carlos Licourt Acosta · YoaDevOps Consulting",
   },
   projects: {
     title: "Proyectos",
@@ -562,6 +623,8 @@ const es: Dict = {
     devopsSubtitle:
       "Plataformas Kubernetes, entrega GitOps e infraestructura como código.",
     viewProject: "Ver proyecto",
+    stackNote:
+      "Construido con React, Next.js, Angular, NestJS, Django, PostgreSQL, Prisma, Supabase y Kubernetes — todo lo que construyo, también lo despliego y lo opero.",
     items: {
       "Tasks App — Platform Engineering": {
         title: "Tasks App — Platform Engineering",
@@ -622,7 +685,7 @@ const es: Dict = {
   contact: {
     title: "Contáctame",
     description:
-      "¿Tienes una propuesta, un proyecto en mente o quieres conversar sobre infraestructura y DevOps? Escríbeme y te contactaré lo antes posible.",
+      "¿Tienes un negocio que todavía trabaja a mano? Escríbeme y lo vemos.",
     nameLabel: "Nombre",
     namePlaceholder: "Tu nombre",
     emailLabel: "Correo",

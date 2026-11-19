@@ -20,25 +20,14 @@ const SITE = "https://yoadevops.vercel.app";
 
 const HOME_META: RouteMeta = {
   title:
-    "Yoan Carlos Licourt — Freelance Fullstack Developer | React · Next.js · NestJS",
+    "YoaDevOps Consulting — Websites and systems for small businesses",
   description:
-    "Fullstack Developer with 6+ years of experience building the systems small businesses run on — invoicing, inventory, cash register — designed to keep working when the connection doesn't. React, Next.js, Angular, NestJS, PostgreSQL. Founder of CajaYa.",
+    "YoaDevOps Consulting builds the website, store, booking system or custom software your business needs, with price and scope in writing before we start. Landing from $250, online store from $500. 100% remote, for Latin America and Europe.",
   ogUrl: `${SITE}/`,
   canonical: `${SITE}/`,
 };
 
-const MIPYMES_META: RouteMeta = {
-  // The /mipymes page is for Cuban businesses, so its meta stays in
-  // Spanish regardless of the visitor's language toggle.
-  title: "Servicios para mipymes — YoaDevOps Consulting",
-  description:
-    "Webs, tiendas y sistemas para negocios en Cuba desde $250. Me escribes por WhatsApp, te cotizo por escrito y lo construimos. CajaYa: 7 días de prueba gratis.",
-  ogUrl: `${SITE}/mipymes`,
-  canonical: `${SITE}/mipymes`,
-};
-
-export function getRouteMeta(route: string): RouteMeta {
-  if (route === "/mipymes") return MIPYMES_META;
+export function getRouteMeta(): RouteMeta {
   return HOME_META;
 }
 
@@ -76,8 +65,8 @@ export function applyRouteMeta(meta: RouteMeta) {
   upsertCanonical(meta.canonical);
 }
 
-export function useRouteMeta(route: string) {
+export function useRouteMeta() {
   useEffect(() => {
-    applyRouteMeta(getRouteMeta(route));
-  }, [route]);
+    applyRouteMeta(getRouteMeta());
+  }, []);
 }

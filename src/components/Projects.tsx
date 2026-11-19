@@ -33,6 +33,12 @@ export const Projects = () => {
           <CardProjects category="devops" />
         </div>
       </section>
+
+      {/* La sección de habilidades quedó en una línea: el cliente no
+          contrata el stack, contrata el resultado. */}
+      <p className="mt-16 text-center text-sm text-slate-500 px-10">
+        {t.projects.stackNote}
+      </p>
     </div>
   );
 };
