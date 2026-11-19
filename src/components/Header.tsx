@@ -14,8 +14,8 @@ export const Header = () => {
         {/* Left Side: Logo */}
         <a href="#" className="flex items-center gap-2">
           <img className="w-auto h-10" src="./yc-devops-logo.svg" alt="YoaDevOps logo" />
-          <span className="font-semibold text-white text-xl tracking-tight">
-            Yoa<span className="text-cyan-400">Dev</span>Ops
+          <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text font-semibold text-transparent text-xl tracking-tight">
+            YoaDevOps
           </span>
         </a>
 
